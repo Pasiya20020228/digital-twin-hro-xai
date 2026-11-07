@@ -21,8 +21,7 @@ yarn-error.log*
 .env
 .env*.local
 
-# Database
-prisma/*.db
+# Database journals
 prisma/*.db-journal
 
 # OS files
@@ -31,3 +30,4 @@ Thumbs.db
 
 # Archives
 *.zip
+

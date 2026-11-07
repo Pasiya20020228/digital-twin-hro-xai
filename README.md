@@ -158,3 +158,4 @@ All actions within the platform are logged into the immutable `AuditLog` table:
 - Historical CSV Dataset Imports with provenance tracking
 - Administrative User Status Changes & Role Elevations
 - User Authentication Events (Success & Failures)
+
