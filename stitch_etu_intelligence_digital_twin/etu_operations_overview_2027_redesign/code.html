@@ -1,0 +1,929 @@
+<!DOCTYPE html><html class="h-full bg-[#F5F7FB]" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_dashboard" name="shell-type">
+<title>ETU Intelligence — NHSL Colombo</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#EEF2FF',
+              100: '#E0E7FF',
+              500: '#3B82F6',
+              600: '#2563EB',
+              700: '#1D4ED8',
+              800: '#1E40AF',
+              900: '#0B192C',
+              navy: '#0E1726',
+            },
+            teal: {
+              50: '#F0FDFA',
+              500: '#14B8A6',
+              600: '#0D9488',
+              700: '#0F766E'
+            },
+            slate: {
+              850: '#151F32'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @layer base {
+      html, body { font-family: 'Inter', sans-serif; }
+    }
+    ::-webkit-scrollbar { width: 4px; height: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 9999px; }
+    .status-pulse {
+      animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pulse-ring {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.15); }
+    }
+  </style>
+</head>
+<body class="h-full text-slate-800 antialiased bg-[#F5F7FB]">
+<div class="flex h-screen overflow-hidden">
+<!-- LEFT NAVIGATION SIDEBAR -->
+<aside class="w-64 flex-shrink-0 bg-white border-r border-slate-200 flex flex-col justify-between z-30 select-none">
+<div class="flex flex-col h-full min-h-0">
+<!-- Logo Area -->
+<div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-700 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">monitor_heart</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-sm font-bold text-slate-900 tracking-tight leading-tight flex items-center gap-1.5">
+                ETU Intelligence
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-semibold border border-blue-100">v3.4</span>
+</span>
+<span class="text-[11px] font-medium text-slate-400 truncate">NHSL Colombo Command</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 px-3 py-3 space-y-0.5 overflow-y-auto">
+<div class="px-2 pb-1.5 pt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400">Core Telemetry</div>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold bg-blue-50/80 text-blue-700 transition-all border border-blue-100/60 shadow-sm" href="#overview">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span>Overview</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#digital-twin">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-slate-400">view_in_ar</span>
+<span>ETU Digital Twin</span>
+</div>
+<span class="text-[10px] font-mono font-medium px-1.5 py-0.5 rounded bg-teal-50 text-teal-700 border border-teal-100">LIVE 3D</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#patient-flow">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-slate-400">conversion_path</span>
+<span>Patient Flow</span>
+</div>
+<span class="text-[11px] font-mono text-slate-500">42</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#bed-management">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-slate-400">single_bed</span>
+<span>Bed Management</span>
+</div>
+<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 font-medium">88%</span>
+</a>
+<div class="px-2 pb-1.5 pt-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400">Predictive Intelligence</div>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#forecasting">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-slate-400">trending_up</span>
+<span>AI Resource Forecasting</span>
+</div>
+<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-50 text-blue-600 font-semibold">+6h</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#recommendations">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-slate-400">auto_awesome</span>
+<span>AI Recommendations</span>
+</div>
+<span class="text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-blue-100 text-blue-800 font-mono">2 Rec</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#agent-center">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-slate-400">smart_toy</span>
+<span>Multi-Agent AI Center</span>
+</div>
+<span class="flex items-center gap-1 text-[10px] text-teal-600 font-mono font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span> 3
+            </span>
+</a>
+<div class="px-2 pb-1.5 pt-4 text-[10px] font-semibold uppercase tracking-wider text-slate-400">Operations &amp; Safety</div>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#staff-equipment">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-slate-400">medical_services</span>
+<span>Staff &amp; Equipment</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#alerts">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-red-500">emergency</span>
+<span>Alerts &amp; Incidents</span>
+</div>
+<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-red-50 text-red-700 font-semibold border border-red-100">3 Signal</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#analytics">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-slate-400">monitoring</span>
+<span>Analytics &amp; Reports</span>
+</div>
+</a>
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors" href="#settings">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-slate-400">shield</span>
+<span>Settings &amp; Audit Logs</span>
+</div>
+</a>
+</nav>
+<!-- Sidebar Footer Status Card -->
+<div class="p-3.5 border-t border-slate-100 bg-slate-50/70">
+<div class="bg-white p-3 rounded-xl border border-slate-200/80 shadow-xs">
+<div class="flex items-center justify-between text-xs mb-1.5">
+<span class="text-slate-500 font-medium">Digital Twin Sync</span>
+<span class="font-mono text-teal-600 font-bold text-[11px]">99.8% PRECISION</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+<div class="bg-teal-500 h-full rounded-full" style="width: 99.8%"></div>
+</div>
+<div class="flex items-center justify-between mt-2 pt-1.5 border-t border-slate-100 text-[10px] text-slate-400">
+<span>Node: NHSL-CMB-01</span>
+<span class="font-mono text-slate-500">120s loop</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- MAIN WRAPPER -->
+<div class="flex-1 flex flex-col min-w-0 h-screen overflow-hidden">
+<!-- TOP BAR -->
+<header class="h-16 bg-white border-b border-slate-200 px-6 flex items-center justify-between flex-shrink-0 z-20">
+<!-- Left: Hospital Breadcrumb & Engine Sync -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 text-xs font-semibold text-slate-900">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>National Hospital of Sri Lanka (NHSL) Colombo</span>
+<span class="text-slate-300">•</span>
+<span class="text-blue-600 font-medium">Emergency Treatment Unit (ETU)</span>
+</div>
+<div class="hidden lg:flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200/60 text-[11px] font-mono text-slate-600">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
+<span>120s sync active</span>
+</div>
+<!-- Demo Disclaimer Pill -->
+<div class="hidden xl:flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-[10px] font-semibold text-amber-800 tracking-wide">
+<span class="material-symbols-outlined text-[13px] text-amber-600">info</span>
+<span>DEMO ENVIRONMENT · SIMULATED DATA · NOT CONNECTED TO LIVE HOSPITAL SYSTEMS</span>
+</div>
+</div>
+<!-- Right: Search, Time, Notifications & User -->
+<div class="flex items-center gap-3">
+<!-- Search ⌘K -->
+<div class="relative w-64 hidden md:block">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-[17px] text-slate-400">search</span>
+<input class="w-full pl-8 pr-10 py-1.5 text-xs bg-slate-50 hover:bg-slate-100/80 focus:bg-white border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all font-sans" placeholder="Search Case, Bed, Agent..." type="text">
+<kbd class="absolute right-2 top-1.5 px-1.5 py-0.5 text-[9px] font-mono font-semibold bg-white border border-slate-200 text-slate-400 rounded">⌘K</kbd>
+</div>
+<!-- Time Indicator -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 text-xs font-mono text-slate-700">
+<span class="material-symbols-outlined text-[15px] text-slate-400">schedule</span>
+<span class="font-medium">CMB 14:42:18</span>
+<span class="text-[10px] text-slate-400 font-sans">(UTC+5:30)</span>
+</div>
+<!-- Notification Bell -->
+<button class="relative p-2 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-red-600 text-white font-mono text-[9px] font-bold flex items-center justify-center ring-2 ring-white">3</span>
+</button>
+<!-- Divider -->
+<div class="h-6 w-px bg-slate-200"></div>
+<!-- User Profile -->
+<div class="flex items-center gap-2.5 pl-1 cursor-pointer group">
+<img alt="Dr. Wickramasinghe" class="w-8 h-8 rounded-full object-cover ring-2 ring-slate-100 group-hover:ring-blue-200 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv12TvhOjJ0sXJVsqaCcSQMjhuvkuU9Ak8TCxVZmEblPxxre6_AE4UM1BengCZiqwfvZj8xCDN-umrRfKC9VgsNySLkZy7lG7i7oj2fAclpMRWMQpW8soA0kvRpNbpqsbVkuvK2k9wQUMRgEsEBxw4PPiBZaIqvrTSZN86LnyycmGwX3Rrzpiwwv1pVYk0DsQbUsPJdAmiZaMkh9IZDY8Ek5ImamuKd8KK-m0mKEdRB9kkG2vy97E">
+<div class="flex flex-col text-left leading-tight hidden sm:flex">
+<span class="text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">Dr. K. Wickramasinghe</span>
+<span class="text-[10px] text-slate-400 font-medium">Clinical Operations Director</span>
+</div>
+</div>
+</div>
+</header>
+<!-- SCROLLABLE PAGE BODY -->
+<main class="flex-1 overflow-y-auto px-6 py-5 space-y-5">
+<!-- PAGE HEADER & OPERATIONAL CONTROLS -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-1">
+<div>
+<div class="flex items-center gap-2.5">
+<h1 class="text-xl font-bold text-slate-900 tracking-tight">ETU Operations Overview</h1>
+<span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-100">Zone Alpha Active</span>
+<span class="text-[11px] font-mono text-slate-400">| Shift: Day Lead 08:00 - 20:00</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5">
+              Monitor emergency operations, anticipate resource demand, and review AI-assisted recommendations in real time.
+            </p>
+</div>
+<!-- Interactive Action Controls -->
+<div class="flex flex-wrap items-center gap-2">
+<!-- Zone Filter Dropdown -->
+<div class="relative">
+<select class="h-9 pl-3 pr-8 bg-white border border-slate-200 text-xs font-medium text-slate-700 rounded-lg shadow-2xs hover:border-slate-300 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 appearance-none cursor-pointer" id="zone-filter">
+<option value="all">All ETU Zones (48 Beds)</option>
+<option value="red">Red Resuscitation (10 Beds)</option>
+<option value="yellow">Yellow Acute (20 Beds)</option>
+<option value="green">Green Ambulatory (12 Beds)</option>
+<option value="obs">Observation Unit (6 Beds)</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-slate-400 absolute right-2.5 top-2.5 pointer-events-none">unfold_more</span>
+</div>
+<!-- Time Window Segmented Control -->
+<div class="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs">
+<button class="px-2.5 py-1 text-slate-600 hover:text-slate-900 font-medium rounded transition-all">Past 12h</button>
+<button class="px-2.5 py-1 text-slate-600 hover:text-slate-900 font-medium rounded transition-all">Past 24h</button>
+<button class="px-2.5 py-1 bg-white text-blue-700 font-semibold rounded shadow-xs border border-slate-200/60">Next 6h Forecast</button>
+</div>
+<!-- Simulation Surge Trigger -->
+<button class="h-9 px-3.5 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all active:scale-95" id="surge-btn" onclick="toggleSurgeSimulation()" title="Test real-time model response to sudden mass casualty or road traffic incident">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span id="surge-label">Simulate Surge +20%</span>
+</button>
+<!-- Export Briefing PDF -->
+<button class="h-9 px-3 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-medium flex items-center gap-1.5 shadow-2xs transition-colors">
+<span class="material-symbols-outlined text-[16px] text-slate-500">picture_as_pdf</span>
+<span>Export Briefing PDF</span>
+</button>
+</div>
+</div>
+<!-- 6 BALANCED MODERN KPI CARDS ROW -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3.5">
+<!-- Card 1: Patients In ETU -->
+<div class="bg-white rounded-xl p-4 border border-slate-200/90 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Patients in ETU</span>
+<span class="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">personal_injury</span>
+</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline gap-1.5">
+<span class="text-2xl font-bold font-mono tracking-tight text-slate-900" id="kpi-patients">42</span>
+<span class="text-xs font-mono text-slate-400">/ 48 cap</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 text-[11px]">
+<span class="font-medium text-amber-600 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>+6 in 1h
+              </span>
+<span class="font-mono text-slate-500">87.5% Cap</span>
+</div>
+</div>
+<!-- Card 2: Available Beds -->
+<div class="bg-white rounded-xl p-4 border border-slate-200/90 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Available Beds</span>
+<span class="w-7 h-7 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">single_bed</span>
+</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline gap-1.5">
+<span class="text-2xl font-bold font-mono tracking-tight text-teal-600" id="kpi-avail">6</span>
+<span class="text-xs font-medium text-teal-700 bg-teal-50 px-1.5 py-0.2 rounded font-mono">READY</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 text-[11px] font-mono text-slate-500">
+<span>2 Resus</span>
+<span>3 Acute</span>
+<span>1 Obs</span>
+</div>
+</div>
+<!-- Card 3: Bed Occupancy -->
+<div class="bg-white rounded-xl p-4 border border-slate-200/90 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Bed Occupancy</span>
+<span class="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">pie_chart</span>
+</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline justify-between">
+<span class="text-2xl font-bold font-mono tracking-tight text-slate-900" id="kpi-occ">87.5%</span>
+<span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-amber-100 text-amber-800">High Tension</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full transition-all duration-500" id="occ-bar" style="width: 87.5%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 text-[11px] text-slate-400">
+<span>Peak: 94% @ 16:30</span>
+<span class="font-mono text-amber-600 font-medium">Amber</span>
+</div>
+</div>
+<!-- Card 4: Patients Awaiting Triage -->
+<div class="bg-white rounded-xl p-4 border border-slate-200/90 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Awaiting Triage</span>
+<span class="w-7 h-7 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline gap-1.5">
+<span class="text-2xl font-bold font-mono tracking-tight text-slate-900" id="kpi-wait">8</span>
+<span class="text-xs font-mono text-slate-400">waiting</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 text-[11px]">
+<span class="text-slate-500 font-mono">Avg: <strong class="text-red-600">24m</strong></span>
+<span class="text-[10px] font-mono font-semibold px-1 rounded bg-red-100 text-red-700">Cat 2/3</span>
+</div>
+</div>
+<!-- Card 5: 6h Influx Forecast -->
+<div class="bg-white rounded-xl p-4 border border-slate-200/90 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">6h Influx Forecast</span>
+<span class="w-7 h-7 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">online_prediction</span>
+</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline gap-1.5">
+<span class="text-2xl font-bold font-mono tracking-tight text-indigo-600" id="kpi-forecast">28</span>
+<span class="text-[10px] font-bold text-red-600 bg-red-50 px-1 py-0.2 rounded">+18%</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 text-[10px] font-mono text-slate-500 truncate">
+<span>95% CI: [24 - 33]</span>
+<span class="text-slate-400">vs 30d avg</span>
+</div>
+</div>
+<!-- Card 6: Active Operational Signals -->
+<div class="bg-white rounded-xl p-4 border border-slate-200/90 shadow-xs flex flex-col justify-between hover:shadow-sm transition-shadow">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Active Signals</span>
+<span class="w-7 h-7 rounded-lg bg-red-50 text-red-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">crisis_alert</span>
+</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline gap-1.5">
+<span class="text-2xl font-bold font-mono tracking-tight text-red-600" id="kpi-alerts">3</span>
+<span class="text-xs font-mono text-slate-400">signals</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 pt-2 border-t border-slate-100 text-[10px] font-mono">
+<span class="px-1.5 py-0.5 rounded bg-red-100 text-red-700 font-bold">1 Crit</span>
+<span class="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 font-medium">2 Warn</span>
+</div>
+</div>
+</div>
+<!-- 2-COLUMN MAIN CONTENT CONSOLE (8 : 4 GRID) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
+<!-- LEFT 8-COLUMN SECTION -->
+<div class="xl:col-span-8 space-y-5">
+<!-- Patient Arrival & Demand Forecast Chart -->
+<div class="bg-white rounded-xl border border-slate-200/90 shadow-xs p-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="text-sm font-bold text-slate-900 tracking-tight">Patient Arrival &amp; Demand Forecast</h2>
+<span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">ARIMA + Transformer v2.4</span>
+</div>
+<p class="text-xs text-slate-500 mt-0.5">
+                    12h Retrospective telemetry vs Next 6h predicted clinical arrivals with 95% Confidence Band
+                  </p>
+</div>
+<!-- Chart Legend -->
+<div class="flex items-center gap-3.5 text-xs font-mono text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-1 rounded-full bg-[#3157D5] inline-block"></span>
+<span class="text-[11px]">Actual</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 h-1 rounded-full border-t-2 border-dashed border-[#0D9488] inline-block"></span>
+<span class="text-[11px]">Forecast (6h)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-2 rounded bg-teal-100/60 border border-teal-200 inline-block"></span>
+<span class="text-[11px]">95% CI</span>
+</div>
+</div>
+</div>
+<!-- High-Precision SVG Chart Area -->
+<div class="relative w-full h-64 pt-3 select-none">
+<svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 780 200">
+<defs>
+<linearGradient id="corridorGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#14B8A6" stop-opacity="0.30"></stop>
+<stop offset="100%" stop-color="#14B8A6" stop-opacity="0.05"></stop>
+</linearGradient>
+<linearGradient id="surgeHighlight" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#FEE2E2" stop-opacity="0.45"></stop>
+<stop offset="100%" stop-color="#FEE2E2" stop-opacity="0.05"></stop>
+</linearGradient>
+</defs>
+<!-- Horizontal Grid Lines -->
+<line stroke="#F1F5F9" stroke-width="1.2" x1="40" x2="760" y1="20" y2="20"></line>
+<line stroke="#F1F5F9" stroke-width="1.2" x1="40" x2="760" y1="60" y2="60"></line>
+<line stroke="#F1F5F9" stroke-width="1.2" x1="40" x2="760" y1="100" y2="100"></line>
+<line stroke="#F1F5F9" stroke-width="1.2" x1="40" x2="760" y1="140" y2="140"></line>
+<!-- NOW Vertical Marker Line -->
+<line stroke="#3B82F6" stroke-dasharray="3,3" stroke-width="1.5" x1="470" x2="470" y1="15" y2="165"></line>
+<!-- Surge Shaded Highlight Zone (16:00 - 18:30) -->
+<rect fill="url(#surgeHighlight)" height="145" rx="4" width="130" x="540" y="20"></rect>
+<!-- 95% CI Range Corridor -->
+<polygon fill="url(#corridorGrad)" points="470,105 520,85 570,45 625,35 680,55 745,80 745,145 680,135 625,115 570,120 520,135 470,138"></polygon>
+<!-- Historical Path (Solid Blue #3157D5) -->
+<path d="M 50,130 Q 90,140 130,118 T 210,128 T 290,95 T 370,100 T 440,88 T 470,108" fill="none" stroke="#3157D5" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Historical Dots -->
+<circle class="transition-all hover:scale-125" cx="50" cy="130" fill="#3157D5" r="3.5"></circle>
+<circle cx="130" cy="118" fill="#3157D5" r="3.5"></circle>
+<circle cx="210" cy="128" fill="#3157D5" r="3.5"></circle>
+<circle cx="290" cy="95" fill="#3157D5" r="3.5"></circle>
+<circle cx="370" cy="100" fill="#3157D5" r="3.5"></circle>
+<circle cx="440" cy="88" fill="#3157D5" r="3.5"></circle>
+<circle cx="470" cy="108" fill="#3157D5" r="5" stroke="#FFFFFF" stroke-width="2"></circle>
+<!-- Forecast Line (Dashed Teal #0D9488) -->
+<path d="M 470,108 Q 520,95 570,70 T 625,55 T 680,85 T 745,102" fill="none" id="forecast-path" stroke="#0D9488" stroke-dasharray="5,4" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Predicted Peak Circle Marker -->
+<circle cx="625" cy="55" fill="#EF4444" r="5" stroke="#FFFFFF" stroke-width="2"></circle>
+<!-- Y-Axis Ticks -->
+<text fill="#94A3B8" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="32" y="24">25</text>
+<text fill="#94A3B8" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="32" y="64">20</text>
+<text fill="#94A3B8" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="32" y="104">15</text>
+<text fill="#94A3B8" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="32" y="144">10</text>
+<!-- X-Axis Labels -->
+<text fill="#64748B" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="50" y="180">03:00</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="130" y="180">06:00</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="210" y="180">08:00</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="290" y="180">10:00</text>
+<text fill="#64748B" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="370" y="180">12:00</text>
+<text fill="#2563EB" font-family="JetBrains Mono" font-size="11" font-weight="700" text-anchor="middle" x="470" y="180">NOW 14:42</text>
+<text fill="#0D9488" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="550" y="180">16:00</text>
+<text fill="#DC2626" font-family="JetBrains Mono" font-size="10" font-weight="700" text-anchor="middle" x="625" y="180">16:30 (PEAK)</text>
+<text fill="#0D9488" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="710" y="180">19:30</text>
+</svg>
+<!-- Highway Surge Tooltip Overlay -->
+<div class="absolute top-2 right-4 bg-white/95 backdrop-blur-md px-3 py-2 rounded-xl border border-red-200/80 shadow-md flex items-center gap-2.5 max-w-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-800 flex items-center gap-1">
+                      Predicted Southern Highway Influx
+                      <span class="text-[9px] font-mono px-1 rounded bg-red-50 text-red-700 font-semibold">HIGH ALERT</span>
+</span>
+<span class="text-[11px] font-mono text-slate-500 mt-0.5">+9 Priority cases expected (16:00 - 18:00)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ETU Resource Status & Bed Matrix -->
+<div class="bg-white rounded-xl border border-slate-200/90 shadow-xs p-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-100">
+<div>
+<h2 class="text-sm font-bold text-slate-900 tracking-tight">ETU Resource Status &amp; Bed Matrix</h2>
+<p class="text-xs text-slate-500">Live operational status across all 48 emergency care points</p>
+</div>
+<div class="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-500">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-teal-500"></span>Ready (6)</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-600"></span>Occupied (36)</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-600"></span>Critical (6)</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-400"></span>Cleaning (1)</span>
+</div>
+</div>
+<!-- Zone Breakdown Grid -->
+<div class="space-y-3.5">
+<!-- Zone 1: Resuscitation (Red) -->
+<div class="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/60">
+<div class="flex items-center justify-between mb-2.5">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+<span class="text-xs font-bold text-slate-900">Resuscitation Bay (Red Zone)</span>
+<span class="text-xs font-mono text-slate-400">• 8 / 10 Occupied</span>
+</div>
+<span class="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-red-50 text-red-700 border border-red-100">2 Beds Open</span>
+</div>
+<!-- Bed Glyphs Grid -->
+<div class="grid grid-cols-5 sm:grid-cols-10 gap-2">
+<div class="p-2 rounded-lg bg-white border border-red-200 text-center shadow-2xs hover:border-red-400 transition-colors cursor-pointer">
+<div class="text-[10px] font-mono font-bold text-red-600">R-01</div>
+<span class="material-symbols-outlined text-[16px] text-red-600">single_bed</span>
+<div class="text-[9px] text-slate-500 font-medium truncate">Intubated</div>
+</div>
+<div class="p-2 rounded-lg bg-white border border-red-200 text-center shadow-2xs hover:border-red-400 transition-colors cursor-pointer">
+<div class="text-[10px] font-mono font-bold text-red-600">R-02</div>
+<span class="material-symbols-outlined text-[16px] text-red-600">single_bed</span>
+<div class="text-[9px] text-slate-500 font-medium truncate">Trauma</div>
+</div>
+<div class="p-2 rounded-lg bg-white border border-red-200 text-center shadow-2xs hover:border-red-400 transition-colors cursor-pointer">
+<div class="text-[10px] font-mono font-bold text-red-600">R-03</div>
+<span class="material-symbols-outlined text-[16px] text-red-600">single_bed</span>
+<div class="text-[9px] text-slate-500 font-medium truncate">Cardiac</div>
+</div>
+<div class="p-2 rounded-lg bg-red-50 border border-red-300 text-center shadow-2xs hover:border-red-500 transition-colors cursor-pointer">
+<div class="text-[10px] font-mono font-bold text-red-700 flex items-center justify-center gap-0.5">R-04 <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse"></span></div>
+<span class="material-symbols-outlined text-[16px] text-red-600">crisis_alert</span>
+<div class="text-[9px] text-red-700 font-bold truncate">Telemetry</div>
+</div>
+<div class="p-2 rounded-lg bg-white border border-red-200 text-center shadow-2xs hover:border-red-400 transition-colors cursor-pointer">
+<div class="text-[10px] font-mono font-bold text-red-600">R-05</div>
+<span class="material-symbols-outlined text-[16px] text-red-600">single_bed</span>
+<div class="text-[9px] text-slate-500 font-medium truncate">Post-CPR</div>
+</div>
+<div class="p-2 rounded-lg bg-white border border-red-200 text-center shadow-2xs hover:border-red-400 transition-colors cursor-pointer">
+<div class="text-[10px] font-mono font-bold text-red-600">R-06</div>
+<span class="material-symbols-outlined text-[16px] text-red-600">single_bed</span>
+<div class="text-[9px] text-slate-500 font-medium truncate">Stroke</div>
+</div>
+<div class="p-2 rounded-lg bg-white border border-red-200 text-center shadow-2xs hover:border-red-400 transition-colors cursor-pointer">
+<div class="text-[10px] font-mono font-bold text-red-600">R-07</div>
+<span class="material-symbols-outlined text-[16px] text-red-600">single_bed</span>
+<div class="text-[9px] text-slate-500 font-medium truncate">Anaph.</div>
+</div>
+<div class="p-2 rounded-lg bg-white border border-red-200 text-center shadow-2xs hover:border-red-400 transition-colors cursor-pointer">
+<div class="text-[10px] font-mono font-bold text-red-600">R-08</div>
+<span class="material-symbols-outlined text-[16px] text-red-600">single_bed</span>
+<div class="text-[9px] text-slate-500 font-medium truncate">Sepsis</div>
+</div>
+<div class="p-2 rounded-lg bg-teal-50/80 border border-teal-200 text-center shadow-2xs hover:border-teal-400 transition-colors cursor-pointer">
+<div class="text-[10px] font-mono font-bold text-teal-700">R-09</div>
+<span class="material-symbols-outlined text-[16px] text-teal-600">check_circle</span>
+<div class="text-[9px] text-teal-700 font-bold">READY</div>
+</div>
+<div class="p-2 rounded-lg bg-teal-50/80 border border-teal-200 text-center shadow-2xs hover:border-teal-400 transition-colors cursor-pointer">
+<div class="text-[10px] font-mono font-bold text-teal-700">R-10</div>
+<span class="material-symbols-outlined text-[16px] text-teal-600">check_circle</span>
+<div class="text-[9px] text-teal-700 font-bold">READY</div>
+</div>
+</div>
+</div>
+<!-- Zone 2: Acute & Priority (Yellow) -->
+<div class="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/60">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+<span class="text-xs font-bold text-slate-900">Acute &amp; Priority (Yellow Zone)</span>
+<span class="text-xs font-mono text-slate-400">• 18 / 20 Occupied</span>
+</div>
+<span class="text-[11px] font-mono font-medium text-slate-600">2 Ready • 1 Turnaround</span>
+</div>
+<!-- Progress occupancy line -->
+<div class="w-full bg-slate-200 h-1.5 rounded-full mb-2.5 overflow-hidden">
+<div class="bg-blue-600 h-full rounded-full" style="width: 90%"></div>
+</div>
+<!-- Compact Micro Matrix -->
+<div class="grid grid-cols-10 gap-1.5">
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-01</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-02</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-03</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-04</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-05</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-06</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-07</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-08</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-09</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-10</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-11</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-12</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-13</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-14</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-15</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-16</div>
+<div class="py-1 px-1 rounded bg-white border border-slate-200 text-center text-[10px] font-mono text-slate-700 font-medium">Y-17</div>
+<div class="py-1 px-1 rounded bg-amber-50 border border-amber-200 text-center text-[10px] font-mono text-amber-700 font-bold">Y-18</div>
+<div class="py-1 px-1 rounded bg-teal-50 border border-teal-200 text-center text-[10px] font-mono text-teal-700 font-bold">Y-19</div>
+<div class="py-1 px-1 rounded bg-teal-50 border border-teal-200 text-center text-[10px] font-mono text-teal-700 font-bold">Y-20</div>
+</div>
+</div>
+<!-- Zone 3 & 4: Ambulatory (Green) & Observation Unit -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+<div class="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/60">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span class="text-xs font-bold text-slate-800">Ambulatory (Green Zone)</span>
+</div>
+<span class="text-[11px] font-mono text-slate-500">10 / 12 Active</span>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 83.3%"></div>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-red-50/40 border border-red-200/70">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-red-500"></span>
+<span class="text-xs font-bold text-red-900">Observation Unit</span>
+</div>
+<span class="text-[11px] font-mono font-bold text-red-600 bg-red-100 px-1.5 py-0.2 rounded">6/6 Full (100%)</span>
+</div>
+<div class="w-full bg-red-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-red-500 h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Explainable AI Recommendations -->
+<div class="bg-white rounded-xl border border-slate-200/90 shadow-xs p-5">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-blue-100 text-blue-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+</div>
+<h2 class="text-sm font-bold text-slate-900 tracking-tight">Active AI Prescriptions &amp; Operational Directives</h2>
+</div>
+<span class="text-xs font-mono font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100">2 Decisions Pending Staff Action</span>
+</div>
+<div class="space-y-3">
+<!-- Prescription 1 -->
+<div class="p-4 rounded-xl bg-slate-50/80 border border-slate-200 hover:border-slate-300 transition-all">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-3">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-red-100 text-red-700 border border-red-200">PREEMPTIVE DECANT PROTOCOL</span>
+<span class="text-[11px] font-mono text-slate-400">AGENT_TRIAGE_OPTIMIZER_02</span>
+<span class="text-xs font-mono font-bold text-teal-600">89% Confidence</span>
+</div>
+<h3 class="text-xs font-bold text-slate-900">Initiate Early Ward Transfer Protocol for 4 Observation Patients</h3>
+<p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                        Reasoning: Prevent Yellow Zone saturation between 16:00-18:00 due to predicted arrival surge of +9 acute highway transfer patients.
+                      </p>
+<div class="flex flex-wrap items-center gap-4 mt-2.5 text-[11px] font-mono text-slate-500">
+<span>Impact: <b class="text-teal-700 font-semibold">Frees 4 Beds</b></span>
+<span>Occupancy shift: <b class="text-slate-800">94% → 81%</b></span>
+<span>Target: <b class="text-slate-800">Ward 12 (Med), Ward 5 (Surg)</b></span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="h-8 px-3.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-xs transition-all active:scale-95" onclick="handleAction(this, 'Dispatched')">
+                        Review &amp; Dispatch
+                      </button>
+<button class="h-8 px-3 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-medium shadow-2xs transition-colors" onclick="handleAction(this, 'Deferred')">
+                        Decline
+                      </button>
+</div>
+</div>
+</div>
+<!-- Prescription 2 -->
+<div class="p-4 rounded-xl bg-slate-50/80 border border-slate-200 hover:border-slate-300 transition-all">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-3">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-teal-100 text-teal-800 border border-teal-200">STAFFING RATIO SAFEGUARD</span>
+<span class="text-[11px] font-mono text-slate-400">AGENT_WORKFORCE_ROSTER_01</span>
+<span class="text-xs font-mono font-bold text-teal-600">92% Confidence</span>
+</div>
+<h3 class="text-xs font-bold text-slate-900">Pre-alert On-call Registrar for Resuscitation Shift at 16:30</h3>
+<p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                        Reasoning: Nurse-to-Patient ratio will exceed 1:3 during predicted trauma cluster arrival window without immediate pre-deployment.
+                      </p>
+<div class="flex flex-wrap items-center gap-4 mt-2.5 text-[11px] font-mono text-slate-500">
+<span>Standard: <b class="text-slate-800">1:2 Critical Care</b></span>
+<span>Registrar: <b class="text-slate-800">Dr. M. Perera (Pager #441)</b></span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="h-8 px-3.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-xs transition-all active:scale-95" onclick="handleAction(this, 'Acknowledged')">
+                        Acknowledge
+                      </button>
+<button class="h-8 px-3 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-medium shadow-2xs transition-colors">
+                        View Logic Tree
+                      </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT 4-COLUMN SECTION -->
+<div class="xl:col-span-4 space-y-5">
+<!-- ETU Spatial Digital Twin Preview -->
+<div class="bg-slate-900 rounded-xl p-4 text-white shadow-sm border border-slate-800 flex flex-col">
+<div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-800">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-400 text-[18px]">view_in_ar</span>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-200">ETU Spatial Digital Twin</span>
+</div>
+<span class="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-teal-950 text-teal-400 border border-teal-800/60">LIVE SENSORS</span>
+</div>
+<!-- High-Tech 2D Schematic Canvas -->
+<div class="relative w-full h-52 bg-slate-950 rounded-lg overflow-hidden p-2.5 border border-slate-800/80 flex items-center justify-center">
+<svg class="w-full h-full" fill="none" viewBox="0 0 320 200">
+<!-- Outer Boundaries -->
+<rect fill="#0B132B" height="180" rx="4" stroke="#1E293B" stroke-width="1.5" width="300" x="10" y="10"></rect>
+<!-- Triage Zone -->
+<rect fill="#EF4444" fill-opacity="0.20" height="70" rx="2" stroke="#EF4444" stroke-dasharray="2,2" stroke-width="1.2" width="75" x="20" y="20"></rect>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="9" font-weight="bold" text-anchor="middle" x="57" y="48">TRIAGE</text>
+<text fill="#FECACA" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="57" y="62">8 Waiting</text>
+<!-- Resus Red Zone -->
+<rect fill="#DC2626" fill-opacity="0.35" height="70" rx="2" stroke="#EF4444" stroke-width="1.5" width="105" x="105" y="20"></rect>
+<text fill="#FFFFFF" font-family="JetBrains Mono" font-size="10" font-weight="bold" text-anchor="middle" x="157" y="48">RESUS (RED)</text>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="157" y="62">8/10 Beds</text>
+<!-- Ambulatory Green -->
+<rect fill="#0D9488" fill-opacity="0.22" height="70" rx="2" stroke="#14B8A6" stroke-width="1.2" width="80" x="220" y="20"></rect>
+<text fill="#5EEAD4" font-family="JetBrains Mono" font-size="9" font-weight="bold" text-anchor="middle" x="260" y="48">GREEN</text>
+<text fill="#99F6E4" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="260" y="62">10/12 Active</text>
+<!-- Acute Yellow Zone -->
+<rect fill="#2563EB" fill-opacity="0.22" height="75" rx="2" stroke="#3B82F6" stroke-width="1.2" width="190" x="20" y="105"></rect>
+<text fill="#93C5FD" font-family="JetBrains Mono" font-size="9" font-weight="bold" text-anchor="middle" x="115" y="138">YELLOW ACUTE (20 BEDS)</text>
+<text fill="#BFDBFE" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="115" y="152">18 Active • 2 Ready</text>
+<!-- Observation Unit -->
+<rect fill="#DC2626" fill-opacity="0.25" height="75" rx="2" stroke="#EF4444" stroke-width="1.2" width="80" x="220" y="105"></rect>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="9" font-weight="bold" text-anchor="middle" x="260" y="138">OBS UNIT</text>
+<text fill="#FECACA" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="260" y="152">6/6 SATURATED</text>
+<!-- Dynamic corridor sensor markers -->
+<circle class="animate-pulse" cx="100" cy="55" fill="#38BDF8" r="3"></circle>
+<circle class="animate-pulse" cx="215" cy="55" fill="#34D399" r="3"></circle>
+<line stroke="#38BDF8" stroke-dasharray="2,2" stroke-width="1.5" x1="95" x2="105" y1="55" y2="55"></line>
+</svg>
+<div class="absolute bottom-2 left-2 bg-slate-900/90 px-2 py-1 rounded border border-slate-700 text-[10px] font-mono text-teal-300 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+<span>Heatmap: Resus Entry Congestion</span>
+</div>
+</div>
+<a class="mt-3 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg text-center shadow-sm flex items-center justify-center gap-1.5 transition-colors" href="#digital-twin">
+<span>Open Full Digital Twin (3D/2D)</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</a>
+</div>
+<!-- Autonomous Multi-Agent AI Status Widget -->
+<div class="bg-white rounded-xl border border-slate-200/90 shadow-xs p-4">
+<div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-teal-50 text-teal-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+</div>
+<h2 class="text-xs font-bold text-slate-900 uppercase tracking-wide">Multi-Agent AI Coordination</h2>
+</div>
+<span class="w-2 h-2 rounded-full bg-teal-500"></span>
+</div>
+<div class="space-y-2.5">
+<!-- Agent 1 -->
+<div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200/70 flex items-center justify-between">
+<div>
+<div class="text-xs font-semibold text-slate-800">Demand Forecasting Agent</div>
+<div class="text-[10px] font-mono text-slate-400">v2.4 • Sync 120s • Last run: 2m ago</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-mono font-bold text-teal-600">98.4% Health</span>
+<div class="text-[10px] font-medium text-slate-400">Optimal</div>
+</div>
+</div>
+<!-- Agent 2 -->
+<div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200/70 flex items-center justify-between">
+<div>
+<div class="text-xs font-semibold text-slate-800">Resource Monitoring Agent</div>
+<div class="text-[10px] font-mono text-slate-400">v3.1 • Real-time telemetry feed</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-mono font-bold text-teal-600">Online</span>
+<div class="text-[10px] font-mono text-slate-400">42ms latency</div>
+</div>
+</div>
+<!-- Agent 3 -->
+<div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200/70 flex items-center justify-between">
+<div>
+<div class="text-xs font-semibold text-slate-800">Recommendation Coordinator</div>
+<div class="text-[10px] font-mono text-slate-400">v1.9 • Consensus engine</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-mono font-bold text-blue-600">2 Pending</span>
+<div class="text-[10px] font-medium text-blue-700">Staff Review</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Incident & Operational Audit Feed -->
+<div class="bg-white rounded-xl border border-slate-200/90 shadow-xs p-4">
+<div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-red-50 text-red-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">notifications_active</span>
+</div>
+<h2 class="text-xs font-bold text-slate-900 uppercase tracking-wide">Incident &amp; Operational Feed</h2>
+</div>
+<span class="text-[10px] font-mono text-slate-400">Audit Stream</span>
+</div>
+<div class="space-y-2.5 text-xs">
+<!-- Log 1: Critical -->
+<div class="p-2.5 rounded-lg bg-red-50/60 border border-red-200/70 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-red-600 text-[18px] shrink-0 mt-0.5">error</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-mono font-bold text-red-700">CRITICAL SIGNAL</span>
+<span class="text-[10px] font-mono text-slate-400">14:38:12</span>
+</div>
+<p class="text-slate-700 text-[11px] mt-0.5 leading-snug">
+                      Resuscitation Bed R-04 cardiac monitor telemetry jitter. Bio-medical engineer notified.
+                    </p>
+</div>
+</div>
+<!-- Log 2: Warning -->
+<div class="p-2.5 rounded-lg bg-amber-50/60 border border-amber-200/70 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-amber-600 text-[18px] shrink-0 mt-0.5">warning</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-mono font-bold text-amber-800">WARNING</span>
+<span class="text-[10px] font-mono text-slate-400">14:22:04</span>
+</div>
+<p class="text-slate-700 text-[11px] mt-0.5 leading-snug">
+                      Observation ward at 100% capacity; 3 pending admissions queued to Medical Ward 12.
+                    </p>
+</div>
+</div>
+<!-- Log 3: Info -->
+<div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200/70 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-teal-600 text-[18px] shrink-0 mt-0.5">check_circle</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-mono font-bold text-teal-700">INFO</span>
+<span class="text-[10px] font-mono text-slate-400">14:05:00</span>
+</div>
+<p class="text-slate-700 text-[11px] mt-0.5 leading-snug">
+                      Shift handover verified: Dr. Silva to Dr. Wickramasinghe. Full roster confirmed.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<!-- Interactive JavaScript Logic -->
+<script>
+    let isSurgeActive = false;
+
+    function toggleSurgeSimulation() {
+      isSurgeActive = !isSurgeActive;
+      const btn = document.getElementById('surge-btn');
+      const label = document.getElementById('surge-label');
+      const patientsEl = document.getElementById('kpi-patients');
+      const availEl = document.getElementById('kpi-avail');
+      const occEl = document.getElementById('kpi-occ');
+      const occBar = document.getElementById('occ-bar');
+      const forecastEl = document.getElementById('kpi-forecast');
+      const alertsEl = document.getElementById('kpi-alerts');
+
+      if (isSurgeActive) {
+        btn.classList.remove('bg-teal-600', 'hover:bg-teal-700');
+        btn.classList.add('bg-red-600', 'hover:bg-red-700');
+        label.innerText = 'Reset Surge Mode';
+
+        patientsEl.innerText = '46';
+        availEl.innerText = '2';
+        availEl.classList.remove('text-teal-600');
+        availEl.classList.add('text-red-600');
+        occEl.innerText = '95.8%';
+        occBar.style.width = '95.8%';
+        occBar.classList.remove('bg-amber-500');
+        occBar.classList.add('bg-red-600');
+        forecastEl.innerText = '36';
+        alertsEl.innerText = '5';
+      } else {
+        btn.classList.remove('bg-red-600', 'hover:bg-red-700');
+        btn.classList.add('bg-teal-600', 'hover:bg-teal-700');
+        label.innerText = 'Simulate Surge +20%';
+
+        patientsEl.innerText = '42';
+        availEl.innerText = '6';
+        availEl.classList.remove('text-red-600');
+        availEl.classList.add('text-teal-600');
+        occEl.innerText = '87.5%';
+        occBar.style.width = '87.5%';
+        occBar.classList.remove('bg-red-600');
+        occBar.classList.add('bg-amber-500');
+        forecastEl.innerText = '28';
+        alertsEl.innerText = '3';
+      }
+    }
+
+    function handleAction(button, label) {
+      button.innerHTML = '<span class="material-symbols-outlined text-[13px]">check</span> ' + label;
+      button.classList.remove('bg-blue-600', 'hover:bg-blue-700', 'bg-white', 'text-slate-700');
+      button.classList.add('bg-teal-600', 'text-white');
+      button.disabled = true;
+    }
+  </script>
+</body></html>

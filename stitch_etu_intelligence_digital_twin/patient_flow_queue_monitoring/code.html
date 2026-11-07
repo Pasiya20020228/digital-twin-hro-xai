@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-variant":"#d7e2ff","secondary-fixed":"#89f5e7","secondary-fixed-dim":"#6bd8cb","tertiary-fixed-dim":"#bcc7de","on-primary-fixed":"#00164d","error":"#ba1a1a","surface-container-lowest":"#ffffff","outline":"#747686","tertiary-fixed":"#d8e3fb","on-secondary":"#ffffff","on-surface":"#041b3c","tertiary":"#3f4a5e","primary-fixed":"#dce1ff","primary":"#003fb3","on-error":"#ffffff","on-tertiary":"#ffffff","on-secondary-fixed":"#00201d","primary-fixed-dim":"#b5c4ff","on-surface-variant":"#434654","on-tertiary-container":"#d3def6","on-background":"#041b3c","surface":"#f9f9ff","on-primary-container":"#d5dcff","on-error-container":"#93000a","inverse-primary":"#b5c4ff","on-tertiary-fixed":"#111c2d","secondary":"#006a61","error-container":"#ffdad6","on-primary":"#ffffff","surface-tint":"#1f54d3","surface-container-low":"#f1f3ff","secondary-container":"#86f2e4","on-secondary-fixed-variant":"#005049","tertiary-container":"#576276","on-secondary-container":"#006f66","background":"#f9f9ff","surface-container-high":"#e0e8ff","inverse-on-surface":"#edf0ff","surface-container-highest":"#d7e2ff","primary-container":"#2457d6","on-tertiary-fixed-variant":"#3c475a","outline-variant":"#c3c5d7","inverse-surface":"#1d3052","surface-container":"#e8edff","surface-bright":"#f9f9ff","surface-dim":"#cadaff","on-primary-fixed-variant":"#003cad"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1.25rem","gutter":"1rem","space-md":"0.75rem","space-sm":"0.5rem","space-xl":"2rem","space-xs":"0.25rem","space-lg":"1.25rem"},"fontFamily":{"body-lg":["Inter"],"body-md":["Inter"],"headline-xl":["Inter"],"headline-xl-mobile":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"headline-lg":["Inter"],"telemetry-data":["JetBrains Mono"],"headline-md":["Inter"],"headline-sm":["Inter"],"label-md":["Inter"],"code-sm":["JetBrains Mono"],"metric-display":["JetBrains Mono"]},"fontSize":{"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"body-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-xl-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"telemetry-data":["13px",{"lineHeight":"16px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"code-sm":["11px",{"lineHeight":"14px","fontWeight":"400"}],"metric-display":["28px",{"lineHeight":"32px","letterSpacing":"-0.03em","fontWeight":"600"}]}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col min-h-0"><div class="p-space-md pb-space-sm"><div class="flex items-center gap-space-sm mb-space-xs"><img alt="ETU Intelligence Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V_yLI12E7UPFu9FOWtL3c6iZyTCAFZGYiRCXzsrecX13od_OKg_zm8YgCqm4n84PvZPIp4V2VqP54OyRhYZvixsskh1NbQyr9U1MUkM3_MwrVSpfGO10_DcPHFgNv6Sm5yDPzV2_kB3Bo2rZAFwCP3IRRkTrqfCPpWlzjGiSmWgNK5IS_PMz8LVj13gVW4AxbtzgPJV6OCPn91e4ZraWsbbo03QkmRLXRyLalEELj38ZLLLJO2oAafVA"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate leading-tight">ETU Intelligence</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">NHSL Colombo</span></div></div><div class="flex items-center justify-between mt-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-code-sm text-code-sm font-semibold">2027 Twin v3.4</span><span class="font-label-sm text-label-sm text-secondary font-medium flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Online</span></div></div><div class="mx-space-md mb-space-sm p-space-xs bg-surface-container-low rounded"><p class="font-label-sm text-label-sm text-tertiary text-center leading-snug tracking-tight font-medium">DEMO ENVIRONMENT • SIMULATED DATA</p></div><nav class="flex-1 px-space-sm space-y-0.5 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#overview"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="digital-twin" href="#digital-twin"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">view_in_ar</span><span class="font-body-md text-body-md">ETU Digital Twin</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-medium">LIVE 3D</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-1.5 rounded transition-colors bg-primary-container text-on-primary font-semibold" data-path="patient-flow" href="#patient-flow"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">conversion_path</span><span class="font-body-md text-body-md">Patient Flow</span></div><span class="font-telemetry-data text-telemetry-data px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant">42 Active</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="bed-management" href="#bed-management"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">single_bed</span><span class="font-body-md text-body-md">Bed Management</span></div><span class="font-telemetry-data text-telemetry-data px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant">88%</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="resource-forecasting" href="#forecasting"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">trending_up</span><span class="font-body-md text-body-md">Resource Forecasting</span></div><span class="font-telemetry-data text-telemetry-data px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant">+6h</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-recommendations" href="#recommendations"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span class="font-body-md text-body-md">AI Recommendations</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container-high text-primary font-semibold">3 Pending</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-agent-center" href="#agent-center"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">smart_toy</span><span class="font-body-md text-body-md">AI Agent Center</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container">3 Online</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="staff-equipment" href="#staff-equipment"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">medical_services</span><span class="font-body-md text-body-md">Staff & Equipment</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="alerts-incidents" href="#alerts"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">emergency</span><span class="font-body-md text-body-md">Alerts & Incidents</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-semibold">2 Crit</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="analytics-reports" href="#analytics"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">monitoring</span><span class="font-body-md text-body-md">Analytics & Reports</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings-audit-logs" href="#settings"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">shield</span><span class="font-body-md text-body-md">Settings & Audit</span></div></a></nav></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center justify-between mb-1"><span class="font-label-sm text-label-sm text-on-surface-variant">Twin Precision Status</span><span class="font-code-sm text-code-sm text-secondary font-medium">99.8%</span></div><div class="w-full bg-surface-container-highest rounded-full h-1"><div class="bg-secondary h-1 rounded-full w-[99.8%]"></div></div><p class="font-label-sm text-label-sm text-tertiary mt-2 text-center">ETU Console v3.4 • SLA Tier 1</p></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span><span class="w-2 h-2 rounded-full bg-secondary -ml-3"></span><span class="font-code-sm text-code-sm text-on-surface font-semibold tracking-wide uppercase">LIVE SIMULATION ENGINE</span></div><span class="text-outline-variant">|</span><span class="font-telemetry-data text-telemetry-data text-on-surface-variant">120s sync active</span></div><div class="flex-1 max-w-md mx-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-[18px] text-outline">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm pl-9 pr-12 py-1.5 rounded border border-outline-variant focus:outline-none focus:border-primary" placeholder="Search Case ID, Bed ID, Agent, Staff..." type="text"/><kbd class="absolute right-2.5 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-sm text-code-sm font-medium">⌘K</kbd></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 bg-surface-container-low px-2 py-1 rounded"><span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span><span class="font-telemetry-data text-telemetry-data text-on-surface">CMB 14:42:18</span></div><div class="flex items-center bg-surface-container-high rounded p-0.5"><button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold shadow-sm">Live</button><button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm">Forecast</button></div><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-2.5 pl-2"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv12TvhOjJ0sXJVsqaCcSQMjhuvkuU9Ak8TCxVZmEblPxxre6_AE4UM1BengCZiqwfvZj8xCDN-umrRfKC9VgsNySLkZy7lG7i7oj2fAclpMRWMQpW8soA0kvRpNbpqsbVkuvK2k9wQUMRgEsEBxw4PPiBZaIqvrTSZN86LnyycmGwX3Rrzpiwwv1pVYk0DsQbUsPJdAmiZaMkh9IZDY8Ek5ImamuKd8KK-m0mKEdRB9kkG2vy97E"/><div class="flex flex-col text-left"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm leading-tight text-on-surface">Dr. K. Wickramasinghe</span><span class="px-1.5 py-0.2 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">Admin</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">Clinical Operations Director</span></div></div></div></header><main class="relative pt-16 bg-background min-h-screen"><div class="w-full bg-surface-container-low px-space-lg py-1 flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[15px] text-tertiary">info</span><span class="font-label-sm text-label-sm">SIMULATION MODE ACTIVE: Synthetic twin patient streams generated for validation testing. Clinical triage triggers enabled.</span></div><span class="font-code-sm text-code-sm text-secondary font-medium">ENGINE ID: SIM_ETU_084</span></div><div class="w-full px-space-margin py-space-md"><div class="flex flex-col w-full space-y-space-md">
+<div class="w-full bg-error-container text-on-error-container px-space-md py-space-xs rounded flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-[18px] shrink-0 text-error">notification_important</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase truncate">
+        DEMO ENVIRONMENT — SIMULATED DATA — NOT CONNECTED TO LIVE HOSPITAL SYSTEMS
+      </span>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-code-sm text-code-sm text-error bg-surface-container-lowest px-1.5 py-0.5 rounded font-medium">NHSL-ETU-SIM-NODE-04</span>
+<span class="font-telemetry-data text-telemetry-data text-on-error-container hidden sm:inline">CYCLE: 120s REFRESH</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm">
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active ETU Census</span>
+<span class="p-1 rounded bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div class="font-metric-display text-metric-display text-on-surface">42</div>
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">Cap: 48</span>
+</div>
+<div class="mt-space-xs w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 87.5%"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 flex items-center justify-between">
+<span>Capacity Threshold</span>
+<span class="font-telemetry-data text-telemetry-data text-primary font-semibold">87.5%</span>
+</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Awaiting Triage</span>
+<span class="p-1 rounded bg-surface-container-high text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div class="font-metric-display text-metric-display text-on-surface">03</div>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-low text-secondary font-semibold">Nominal</span>
+</div>
+<div class="mt-space-xs flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">timer</span>
+<span class="font-body-sm text-body-sm">Avg wait: <strong class="font-telemetry-data text-telemetry-data text-on-surface">6m</strong></span>
+<span class="text-outline-variant text-[11px]">• SLA <10m</span>
+</div>
+<div class="mt-1.5 flex gap-1">
+<span class="h-1 flex-1 rounded-full bg-secondary"></span>
+<span class="h-1 flex-1 rounded-full bg-secondary"></span>
+<span class="h-1 flex-1 rounded-full bg-secondary"></span>
+<span class="h-1 flex-1 rounded-full bg-surface-container-high"></span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Triaged / Awaiting Bed</span>
+<span class="p-1 rounded bg-surface-container-high text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">airline_seat_recline_normal</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div class="font-metric-display text-metric-display text-on-surface">05</div>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-tertiary font-semibold">Level 2 Alert</span>
+</div>
+<div class="mt-space-xs flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-tertiary">pace</span>
+<span class="font-body-sm text-body-sm">Avg wait: <strong class="font-telemetry-data text-telemetry-data text-on-surface">28m</strong></span>
+<span class="text-outline-variant text-[11px]">• SLA <20m</span>
+</div>
+<div class="mt-1.5 w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 70%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Clinical Care</span>
+<span class="p-1 rounded bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">medical_services</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div class="font-metric-display text-metric-display text-primary">26</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">Beds: 26/30 Occupied</span>
+</div>
+<div class="mt-space-xs flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Resus: <strong class="text-on-surface font-telemetry-data text-telemetry-data">4</strong></span>
+<span>Acute: <strong class="text-on-surface font-telemetry-data text-telemetry-data">14</strong></span>
+<span>Obs: <strong class="text-on-surface font-telemetry-data text-telemetry-data">8</strong></span>
+</div>
+<div class="mt-1.5 w-full bg-surface-container-high h-1 rounded-full overflow-hidden flex">
+<div class="bg-error h-full" style="width: 15%"></div>
+<div class="bg-primary h-full" style="width: 55%"></div>
+<div class="bg-secondary h-full" style="width: 30%"></div>
+</div>
+</div>
+<div class="bg-error-container text-on-error-container p-space-md rounded shadow-sm flex flex-col justify-between relative overflow-hidden sm:col-span-2 lg:col-span-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="font-label-sm text-label-sm text-error font-semibold uppercase tracking-wider">Transfer Boarding Lag</span>
+</div>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container-lowest text-error font-bold">CRITICAL</span>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div class="font-metric-display text-metric-display text-error">08</div>
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-semibold">Avg 3h 12m</span>
+</div>
+<div class="mt-space-xs p-1.5 rounded bg-surface-container-lowest/80 flex items-center justify-between text-on-surface">
+<span class="font-label-sm text-label-sm flex items-center gap-1 text-error">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+          Ward 12 Bottleneck
+        </span>
+<span class="font-code-sm text-code-sm font-semibold text-error">+45m SLA slip</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="p-1.5 rounded bg-surface-container-high text-primary">
+<span class="material-symbols-outlined text-[20px]">account_tree</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight">Interactive Patient Flow Pipeline</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time throughput stage analytics across NHSL ETU operational quadrants</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Suwa Seriya Sync
+        </span>
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors flex items-center gap-1" id="pipelineZoomToggle">
+<span class="material-symbols-outlined text-[15px]">tune</span>
+          Pipeline Detail
+        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-xs relative">
+<div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Stage 01: Intake</span>
+<span class="font-telemetry-data text-telemetry-data font-semibold text-on-surface">35/hr</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Arrival & Reg</div>
+<div class="space-y-1 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-error">ambulance</span>
+              1990 Suwa Seriya
+            </span>
+<span class="font-telemetry-data text-telemetry-data font-medium text-on-surface">35%</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">directions_walk</span>
+              Walk-in / Private
+            </span>
+<span class="font-telemetry-data text-telemetry-data font-medium text-on-surface">65%</span>
+</div>
+</div>
+<div class="mt-2 text-right">
+<span class="font-code-sm text-code-sm text-secondary font-medium">Clearance: 4.2m</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Stage 02: Triage</span>
+<span class="font-telemetry-data text-telemetry-data font-semibold text-on-surface">3 active</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Acuity Protocol</div>
+<div class="space-y-1 font-body-sm text-body-sm">
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="flex items-center gap-1 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+              Cat 1 Resus
+            </span>
+<span class="font-telemetry-data text-telemetry-data font-semibold text-error">15%</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="flex items-center gap-1 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+              Cat 2 Urgent
+            </span>
+<span class="font-telemetry-data text-telemetry-data font-medium text-on-surface">45%</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="flex items-center gap-1 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+              Cat 3 Standard
+            </span>
+<span class="font-telemetry-data text-telemetry-data font-medium text-on-surface">40%</span>
+</div>
+</div>
+<div class="mt-2 text-right">
+<span class="font-code-sm text-code-sm text-secondary font-medium">Avg Triage: 5.8m</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Stage 03: Clinical Care</span>
+<span class="font-telemetry-data text-telemetry-data font-semibold text-primary">26 beds</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Active Treatment</div>
+<div class="space-y-1 font-body-sm text-body-sm">
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface">Resus Bay (4)</span>
+<span class="font-telemetry-data text-telemetry-data text-error font-semibold">100% full</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface">Acute Area (16)</span>
+<span class="font-telemetry-data text-telemetry-data text-primary font-medium">87% occ</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface">Ambulatory (10)</span>
+<span class="font-telemetry-data text-telemetry-data text-secondary font-medium">60% occ</span>
+</div>
+</div>
+<div class="mt-2 text-right">
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">Active Rx: 26 Pt</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between group hover:bg-surface-container transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Stage 04: Diagnostics</span>
+<span class="font-telemetry-data text-telemetry-data font-semibold text-on-surface">11 scans</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Decision Matrix</div>
+<div class="space-y-1 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface">CT Trauma Bay</span>
+<span class="font-telemetry-data text-telemetry-data text-on-surface">3 queued</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface">Point of Care Lab</span>
+<span class="font-telemetry-data text-telemetry-data text-secondary font-medium">18m TAT</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface">Fast Track US</span>
+<span class="font-telemetry-data text-telemetry-data text-on-surface">Available</span>
+</div>
+</div>
+<div class="mt-2 text-right">
+<span class="font-code-sm text-code-sm text-secondary font-medium">Mean Decision: 1.4h</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-space-sm rounded flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Stage 05: Disposition</span>
+<span class="font-telemetry-data text-telemetry-data font-bold text-error">8 delayed</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Outflow & Transfer</div>
+<div class="space-y-1 font-body-sm text-body-sm">
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface">Discharge Home</span>
+<span class="font-telemetry-data text-telemetry-data text-secondary font-medium">58%</span>
+</div>
+<div class="flex justify-between items-center bg-error-container text-on-error-container p-1 rounded">
+<span class="font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">block</span> Ward Transfer
+            </span>
+<span class="font-telemetry-data text-telemetry-data font-bold text-error">34%</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface">ICU Escalation</span>
+<span class="font-telemetry-data text-telemetry-data text-primary font-medium">8%</span>
+</div>
+</div>
+<div class="mt-2 text-right">
+<span class="font-code-sm text-code-sm text-error font-semibold">Critical Bottleneck</span>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container p-space-sm rounded flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="p-1 rounded bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-error uppercase">Active Bottleneck Detected • Ward Transfer Outflow</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+            Average boarding time exceeded by <strong class="font-semibold text-error">45 mins</strong> due to <strong class="font-semibold">Medical Ward 12</strong> bed lag. 8 patients currently holding acute beds in ETU.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors shadow-sm" onclick="filterTableByStage('Awaiting Admission')">
+          Filter Affected Cases (8)
+        </button>
+<button class="px-space-sm py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm transition-colors shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">cell_tower</span>
+          Escalate to Bed Manager
+        </button>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded shadow-sm flex flex-col overflow-hidden">
+<div class="p-space-md bg-surface-container-lowest flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">Live Patient Operational Registry</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">SIMULATED STREAM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time status tracking, acuity tiering, and agent-calculated disposition forecasts</p>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<div class="relative flex-1 sm:w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-[16px] text-outline">search</span>
+<input class="w-full bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm pl-8 pr-3 py-1.5 rounded focus:outline-none focus:bg-surface-container focus:ring-1 focus:ring-primary" id="caseSearchInput" placeholder="Search Case ID (#ETU-...)" type="text"/>
+</div>
+<select class="bg-surface-container-low text-on-surface font-body-sm text-body-sm px-2.5 py-1.5 rounded focus:outline-none" id="acuityFilter">
+<option value="ALL">All Acuity Tiers</option>
+<option value="Cat 1">Cat 1 (Resuscitation)</option>
+<option value="Cat 2">Cat 2 (Urgent)</option>
+<option value="Cat 3">Cat 3 (Standard)</option>
+</select>
+<select class="bg-surface-container-low text-on-surface font-body-sm text-body-sm px-2.5 py-1.5 rounded focus:outline-none" id="stageFilter">
+<option value="ALL">All Stages</option>
+<option value="Undergoing Resuscitation">Resuscitation</option>
+<option value="Active Treatment">Active Treatment</option>
+<option value="Awaiting CT scan">Awaiting Diagnostics</option>
+<option value="Awaiting Admission">Awaiting Ward Admission</option>
+<option value="Triage Evaluation">Triage Assessment</option>
+</select>
+<button class="p-1.5 rounded bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors" id="resetFiltersBtn" title="Reset Filters">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+</div>
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse" id="patientTable">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-space-md font-semibold">Case ID</th>
+<th class="py-2.5 px-space-md font-semibold">Arrival & Influx</th>
+<th class="py-2.5 px-space-md font-semibold">Triage Acuity</th>
+<th class="py-2.5 px-space-md font-semibold">Operational Stage</th>
+<th class="py-2.5 px-space-md font-semibold">Current Bay</th>
+<th class="py-2.5 px-space-md font-semibold text-right">Elapsed Time</th>
+<th class="py-2.5 px-space-md font-semibold">AI Predicted Disposition</th>
+<th class="py-2.5 px-space-md font-semibold text-center">Quick Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-sm text-body-sm" id="patientTableBody">
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors patient-row" data-acuity="Cat 1" data-case="ETU-8942" data-stage="Undergoing Resuscitation" data-time="27">
+<td class="py-2 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-telemetry-data text-telemetry-data font-semibold text-primary">#ETU-8942</span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-medium">14:15</span>
+<span class="font-code-sm text-code-sm text-error flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">emergency</span> 1990 Suwa Seriya
+                </span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-error-container text-on-error-container inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Cat 1 Resus
+              </span>
+</td>
+<td class="py-2 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-medium inline-block">
+                Undergoing Resuscitation
+              </span>
+</td>
+<td class="py-2 px-space-md">
+<span class="font-telemetry-data text-telemetry-data font-semibold text-on-surface bg-surface-container px-1.5 py-0.5 rounded">Bed R-02</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<span class="font-telemetry-data text-telemetry-data font-semibold text-secondary">0h 27m</span>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">ICU Bed Transfer</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Est: 15:15 (Conf: 94%)</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container-high text-primary font-label-sm text-label-sm transition-colors" onclick="event.stopPropagation(); openDrawer('ETU-8942')">
+                View Trace
+              </button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors patient-row" data-acuity="Cat 2" data-case="ETU-8941" data-stage="Awaiting CT scan" data-time="72">
+<td class="py-2 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-telemetry-data text-telemetry-data font-semibold text-primary">#ETU-8941</span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-medium">13:30</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">directions_walk</span> Walk-in
+                </span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-surface-container-high text-tertiary inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Cat 2 Urgent
+              </span>
+</td>
+<td class="py-2 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-medium inline-block">
+                Awaiting CT scan
+              </span>
+</td>
+<td class="py-2 px-space-md">
+<span class="font-telemetry-data text-telemetry-data font-semibold text-on-surface bg-surface-container px-1.5 py-0.5 rounded">Bed Y-14</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<span class="font-telemetry-data text-telemetry-data font-medium text-tertiary">1h 12m</span>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Ortho Ward 07 Transfer</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Est: 16:00 (Conf: 89%)</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container-high text-primary font-label-sm text-label-sm transition-colors" onclick="event.stopPropagation(); openDrawer('ETU-8941')">
+                View Trace
+              </button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors patient-row bg-error-container/20" data-acuity="Cat 2" data-case="ETU-8939" data-stage="Awaiting Admission" data-time="225">
+<td class="py-2 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-telemetry-data text-telemetry-data font-semibold text-error">#ETU-8939</span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-medium">10:57</span>
+<span class="font-code-sm text-code-sm text-error flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">emergency</span> 1990 Suwa Seriya
+                </span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-surface-container-high text-tertiary inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Cat 2 Urgent
+              </span>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold inline-block">
+                  Awaiting Admission
+                </span>
+<span class="material-symbols-outlined text-[15px] text-error" title="Boarding Delay">report_problem</span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<span class="font-telemetry-data text-telemetry-data font-semibold text-on-surface bg-surface-container px-1.5 py-0.5 rounded">Bed Y-08</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<span class="font-telemetry-data text-telemetry-data font-bold text-error">3h 45m</span>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-error font-bold">Medical Ward 12</span>
+<span class="font-code-sm text-code-sm text-error font-medium">Boarding lag: +110m</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container-high text-primary font-label-sm text-label-sm transition-colors" onclick="event.stopPropagation(); openDrawer('ETU-8939')">
+                  Trace
+                </button>
+<button class="px-1.5 py-1 rounded bg-error text-on-error font-label-sm text-label-sm transition-colors" onclick="event.stopPropagation(); alert('Priority bed alert sent to Ward 12 Sister-in-Charge.')" title="Flag Urgent Delay">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors patient-row" data-acuity="Cat 3" data-case="ETU-8940" data-stage="Active Treatment" data-time="48">
+<td class="py-2 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-telemetry-data text-telemetry-data font-semibold text-primary">#ETU-8940</span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-medium">13:54</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">directions_walk</span> Walk-in
+                </span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-secondary-container text-on-secondary-container inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Cat 3 Standard
+              </span>
+</td>
+<td class="py-2 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-medium inline-block">
+                Active Treatment
+              </span>
+</td>
+<td class="py-2 px-space-md">
+<span class="font-telemetry-data text-telemetry-data font-semibold text-on-surface bg-surface-container px-1.5 py-0.5 rounded">Bed G-03</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<span class="font-telemetry-data text-telemetry-data font-medium text-secondary">0h 48m</span>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Discharge Home</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Est: 15:10 (Conf: 96%)</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container-high text-primary font-label-sm text-label-sm transition-colors" onclick="event.stopPropagation(); openDrawer('ETU-8940')">
+                View Trace
+              </button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors patient-row" data-acuity="Cat 3" data-case="ETU-8938" data-stage="Triage Evaluation" data-time="9">
+<td class="py-2 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-telemetry-data text-telemetry-data font-semibold text-primary">#ETU-8938</span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-medium">14:33</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">directions_walk</span> Walk-in
+                </span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-secondary-container text-on-secondary-container inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Cat 3 Standard
+              </span>
+</td>
+<td class="py-2 px-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-medium inline-block">
+                Triage Evaluation
+              </span>
+</td>
+<td class="py-2 px-space-md">
+<span class="font-telemetry-data text-telemetry-data font-semibold text-on-surface bg-surface-container px-1.5 py-0.5 rounded">Triage Pod 2</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<span class="font-telemetry-data text-telemetry-data font-medium text-secondary">0h 09m</span>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Ambulatory Minor Care</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Est: 15:45 (Conf: 82%)</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container-high text-primary font-label-sm text-label-sm transition-colors" onclick="event.stopPropagation(); openDrawer('ETU-8938')">
+                View Trace
+              </button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors patient-row bg-error-container/10" data-acuity="Cat 1" data-case="ETU-8935" data-stage="Awaiting Admission" data-time="192">
+<td class="py-2 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-telemetry-data text-telemetry-data font-semibold text-error">#ETU-8935</span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-medium">11:30</span>
+<span class="font-code-sm text-code-sm text-error flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">emergency</span> 1990 Suwa Seriya
+                </span>
+</div>
+</td>
+<td class="py-2 px-space-md">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-error-container text-on-error-container inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Cat 1 Resus
+              </span>
+</td>
+<td class="py-2 px-space-md">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold inline-block">
+                Awaiting Admission
+              </span>
+</td>
+<td class="py-2 px-space-md">
+<span class="font-telemetry-data text-telemetry-data font-semibold text-on-surface bg-surface-container px-1.5 py-0.5 rounded">Bed R-01</span>
+</td>
+<td class="py-2 px-space-md text-right">
+<span class="font-telemetry-data text-telemetry-data font-bold text-error">3h 12m</span>
+</td>
+<td class="py-2 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-error font-bold">Cardiology CCU Bed</span>
+<span class="font-code-sm text-code-sm text-error">CCU bed turnaround wait</span>
+</div>
+</td>
+<td class="py-2 px-space-md text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container-high text-primary font-label-sm text-label-sm transition-colors" onclick="event.stopPropagation(); openDrawer('ETU-8935')">
+                  Trace
+                </button>
+<button class="px-1.5 py-1 rounded bg-error text-on-error font-label-sm text-label-sm transition-colors" onclick="event.stopPropagation(); alert('Emergency Bed Escalation triggered for Bed R-01 to CCU!')">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between text-on-surface-variant gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm">Displaying 6 of 42 active cases</span>
+<span class="text-outline-variant">|</span>
+<span class="font-code-sm text-code-sm">SORT: ELAPSED TIME (DESC)</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm">1</button>
+<button class="px-2 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm">2</button>
+<button class="px-2 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm">3</button>
+<button class="px-2 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm">...</button>
+<button class="px-2 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm">7</button>
+</div>
+</div>
+</div>
+<div class="fixed inset-y-0 right-0 w-full max-w-xl bg-surface-container-lowest shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col" id="caseDetailDrawer">
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="p-1.5 rounded bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">timeline</span>
+</span>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-telemetry-data font-semibold" id="drawerCaseId">#ETU-8939</h4>
+<span class="px-2 py-0.2 rounded font-label-sm text-label-sm font-semibold bg-surface-container-high text-tertiary" id="drawerAcuityBadge">Cat 2 Urgent</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Patient Flow Trace & Bottleneck Diagnostics</span>
+</div>
+</div>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" onclick="closeDrawer()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-space-md space-y-space-md">
+<div class="grid grid-cols-3 gap-space-xs">
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Current Bay</span>
+<div class="font-telemetry-data text-telemetry-data font-semibold text-on-surface mt-0.5" id="drawerBay">Bed Y-08 (Acute)</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Total Time in ETU</span>
+<div class="font-telemetry-data text-telemetry-data font-bold text-error mt-0.5" id="drawerElapsed">3h 45m</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Influx Method</span>
+<div class="font-code-sm text-code-sm text-error font-medium mt-0.5">Suwa Seriya 1990</div>
+</div>
+</div>
+<div class="bg-error-container/40 p-space-sm rounded border-l-4 border-error">
+<div class="flex items-center gap-1.5 text-error">
+<span class="material-symbols-outlined text-[18px]">error</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Operational Bottleneck Analysis</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">
+          Diagnostics turnaround time: <strong class="font-telemetry-data text-telemetry-data">38 mins (Normal)</strong>.<br/>
+          Inpatient bed transfer lag: <strong class="font-telemetry-data text-telemetry-data text-error font-semibold">110 mins (Delay cause: Medical Ward 12 discharge backlog)</strong>.
+        </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-lowest text-error font-medium">Escalated to Floor Matron</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Ticket #ESC-402</span>
+</div>
+</div>
+<div>
+<h5 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-space-sm font-semibold">Milestone Lifecycle Trace</h5>
+<div class="relative pl-6 space-y-space-md before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<div class="relative">
+<span class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-on-secondary text-[10px]">✓</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Intake & Suwa Seriya Handover</span>
+<span class="font-telemetry-data text-telemetry-data text-on-surface-variant">10:57</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Ambulance #1990-CLB-22 telemetry handoff accepted by Nurse In-charge.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-on-secondary text-[10px]">✓</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Triage Scoring Complete</span>
+<span class="font-telemetry-data text-telemetry-data text-on-surface-variant">11:03</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Assigned Category 2 (Urgent). NEWS2 score: 5. Allocated to Acute Pod.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-on-secondary text-[10px]">✓</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Physician Initial Evaluation</span>
+<span class="font-telemetry-data text-telemetry-data text-on-surface-variant">11:15</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Assessed by Dr. Fernando. IV line secured, ECG and blood panel dispatched.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-on-secondary text-[10px]">✓</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Diagnostics Verified</span>
+<span class="font-telemetry-data text-telemetry-data text-on-surface-variant">11:53</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Troponin & Urea labs processed within 38m TAT. Medical ward admission ordered.</p>
+</div>
+<div class="relative">
+<span class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-error flex items-center justify-center text-on-error text-[10px] animate-ping">!</span>
+<span class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-error flex items-center justify-center text-on-error text-[10px]">!</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-error font-semibold">Ward Transfer Request Submitted</span>
+<span class="font-telemetry-data text-telemetry-data text-error font-bold">12:05 (Pending)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+              Target destination: <strong class="text-on-surface">Ward 12 (Internal Medicine)</strong>. Bed #14 pending patient discharge. Holding in ETU Acute Bed Y-08 for 110 minutes beyond nominal transfer window.
+            </p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded space-y-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Assigned Care Team</span>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-code-sm text-code-sm font-semibold">DF</span>
+<div>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Dr. Fernando (Registrar)</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">ETU Acute Quadrant</span>
+</div>
+</div>
+<span class="font-code-sm text-code-sm text-secondary font-medium">Beeper #810</span>
+</div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low flex items-center justify-between gap-space-sm">
+<button class="px-space-md py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors" onclick="closeDrawer()">
+        Dismiss
+      </button>
+<div class="flex items-center gap-2">
+<button class="px-space-md py-1.5 rounded bg-error text-on-error font-label-sm text-label-sm transition-colors flex items-center gap-1 shadow-sm" onclick="alert('Synthetic escalation sent to Ward 12 Sister-in-Charge.')">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+          Expedite Ward 12 Bed
+        </button>
+<button class="px-space-md py-1.5 rounded bg-primary text-on-primary font-label-sm text-label-sm transition-colors flex items-center gap-1 shadow-sm" onclick="alert('Operational notes opened.')">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+          Clinical Notes
+        </button>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 bg-inverse-surface/30 backdrop-blur-xs z-40 hidden transition-opacity" id="drawerOverlay" onclick="closeDrawer()"></div>
+</div>
+<script>
+  function openDrawer(caseId) {
+    const drawer = document.getElementById('caseDetailDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const caseIdEl = document.getElementById('drawerCaseId');
+    const acuityEl = document.getElementById('drawerAcuityBadge');
+    const bayEl = document.getElementById('drawerBay');
+    const elapsedEl = document.getElementById('drawerElapsed');
+
+    if (caseId === 'ETU-8942') {
+      caseIdEl.innerText = '#ETU-8942';
+      acuityEl.innerText = 'Cat 1 Resus';
+      acuityEl.className = 'px-2 py-0.2 rounded font-label-sm text-label-sm font-semibold bg-error-container text-on-error-container';
+      bayEl.innerText = 'Bed R-02 (Resus)';
+      elapsedEl.innerText = '0h 27m';
+      elapsedEl.className = 'font-telemetry-data text-telemetry-data font-bold text-secondary mt-0.5';
+    } else if (caseId === 'ETU-8941') {
+      caseIdEl.innerText = '#ETU-8941';
+      acuityEl.innerText = 'Cat 2 Urgent';
+      acuityEl.className = 'px-2 py-0.2 rounded font-label-sm text-label-sm font-semibold bg-surface-container-high text-tertiary';
+      bayEl.innerText = 'Bed Y-14 (Acute)';
+      elapsedEl.innerText = '1h 12m';
+      elapsedEl.className = 'font-telemetry-data text-telemetry-data font-bold text-tertiary mt-0.5';
+    } else {
+      caseIdEl.innerText = '#ETU-8939';
+      acuityEl.innerText = 'Cat 2 Urgent (Delayed)';
+      acuityEl.className = 'px-2 py-0.2 rounded font-label-sm text-label-sm font-semibold bg-error-container text-on-error-container';
+      bayEl.innerText = 'Bed Y-08 (Acute)';
+      elapsedEl.innerText = '3h 45m';
+      elapsedEl.className = 'font-telemetry-data text-telemetry-data font-bold text-error mt-0.5';
+    }
+
+    overlay.classList.remove('hidden');
+    setTimeout(() => {
+      drawer.classList.remove('translate-x-full');
+    }, 10);
+  }
+
+  function closeDrawer() {
+    const drawer = document.getElementById('caseDetailDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+    drawer.classList.add('translate-x-full');
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+    }, 300);
+  }
+
+  const searchInput = document.getElementById('caseSearchInput');
+  const acuityFilter = document.getElementById('acuityFilter');
+  const stageFilter = document.getElementById('stageFilter');
+  const resetBtn = document.getElementById('resetFiltersBtn');
+  const rows = document.querySelectorAll('.patient-row');
+
+  function filterCases() {
+    const searchVal = searchInput.value.toLowerCase().trim();
+    const acuityVal = acuityFilter.value;
+    const stageVal = stageFilter.value;
+
+    rows.forEach(row => {
+      const caseCode = row.getAttribute('data-case').toLowerCase();
+      const acuity = row.getAttribute('data-acuity');
+      const stage = row.getAttribute('data-stage');
+
+      const matchesSearch = !searchVal || caseCode.includes(searchVal) || row.innerText.toLowerCase().includes(searchVal);
+      const matchesAcuity = acuityVal === 'ALL' || acuity === acuityVal;
+      const matchesStage = stageVal === 'ALL' || stage.toLowerCase().includes(stageVal.toLowerCase());
+
+      if (matchesSearch && matchesAcuity && matchesStage) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  searchInput.addEventListener('input', filterCases);
+  acuityFilter.addEventListener('change', filterCases);
+  stageFilter.addEventListener('change', filterCases);
+
+  resetBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    acuityFilter.value = 'ALL';
+    stageFilter.value = 'ALL';
+    filterCases();
+  });
+
+  function filterTableByStage(stageName) {
+    stageFilter.value = stageName;
+    filterCases();
+  }
+
+  rows.forEach(row => {
+    row.addEventListener('click', () => {
+      const caseId = row.getAttribute('data-case');
+      openDrawer(caseId);
+    });
+  });
+
+  document.getElementById('pipelineZoomToggle').addEventListener('click', function() {
+    alert('Pipeline metrics synchronized with NHSL 2027 Discrete Event Twin Engine.');
+  });
+</script></div></main></div></body></html>

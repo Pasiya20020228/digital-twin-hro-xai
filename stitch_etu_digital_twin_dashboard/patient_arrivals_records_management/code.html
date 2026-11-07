@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#dce1ff","surface-tint":"#1e667f","surface-container-high":"#dce9ff","on-error-container":"#93000a","tertiary":"#004456","on-tertiary-container":"#85d5f4","tertiary-fixed-dim":"#81d1f0","on-surface":"#0d1c2e","on-tertiary":"#ffffff","surface-variant":"#d5e3fc","primary-fixed":"#bde9ff","secondary-fixed-dim":"#b6c4ff","surface":"#f8f9ff","on-tertiary-fixed-variant":"#004d62","on-background":"#0d1c2e","on-primary-fixed-variant":"#004d64","on-primary":"#ffffff","secondary":"#4059aa","on-secondary-fixed-variant":"#264191","surface-bright":"#f8f9ff","on-primary-fixed":"#001f2a","outline":"#70787d","on-surface-variant":"#40484c","primary-container":"#0d5c75","error-container":"#ffdad6","inverse-primary":"#90cfec","on-secondary":"#ffffff","primary-fixed-dim":"#90cfec","surface-container-lowest":"#ffffff","outline-variant":"#bfc8cd","inverse-on-surface":"#eaf1ff","on-secondary-fixed":"#00164e","on-secondary-container":"#1d3989","tertiary-fixed":"#b9eaff","surface-container-highest":"#d5e3fc","tertiary-container":"#005d75","on-error":"#ffffff","surface-container-low":"#eff4ff","surface-container":"#e6eeff","inverse-surface":"#233144","background":"#f8f9ff","surface-dim":"#ccdbf3","on-tertiary-fixed":"#001f29","error":"#ba1a1a","primary":"#004357","on-primary-container":"#93d3ef","secondary-container":"#8fa7fe"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1.5rem","space-lg":"1.25rem","gutter":"1rem","space-xs":"0.25rem","space-md":"0.75rem","gutter-mobile":"0.75rem","space-sm":"0.5rem","space-xl":"2rem","margin-mobile":"1rem"},"fontFamily":{"body-sm":["Inter"],"headline-sm":["Inter"],"headline-lg-mobile":["Inter"],"headline-xl-mobile":["Inter"],"label-sm":["Inter"],"headline-xl":["Inter"],"label-md":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"body-lg":["Inter"],"headline-lg":["Inter"],"label-lg":["Inter"]},"fontSize":{"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"700"}],"headline-xl":["36px",{"lineHeight":"44px","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["30px",{"lineHeight":"38px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"18px","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">vital_signs</span></div><div class="flex flex-col"><span class="font-label-lg text-label-lg text-on-surface tracking-tight leading-none">AURA CLINICAL</span><span class="font-label-sm text-label-sm text-outline tracking-wider uppercase mt-0.5">ETU / Trauma Digital Twin</span></div></div><div class="px-space-md py-space-sm"><div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Active Ward Model</span><span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span></div><div class="flex items-center justify-between text-on-surface"><span class="font-label-md text-label-md">Combined ETU &amp; Accident</span><span class="material-symbols-outlined text-[16px] text-outline">unfold_more</span></div></div></div><div class="px-space-md pt-space-xs"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Clinical Command</span><nav class="flex flex-col gap-1 mt-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-md rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 transition-colors bg-primary-container text-on-primary font-label-md rounded-lg shadow-sm" data-path="patient-arrivals-and-records" href="#"><span class="material-symbols-outlined text-[18px]">emergency</span><span class="font-body-md text-body-md">Patient Arrivals &amp; Records</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="patient-discharge" href="#"><span class="material-symbols-outlined text-[18px]">output</span><span class="font-body-md text-body-md">Patient Discharge</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="flow-analytics-and-history" href="#"><span class="material-symbols-outlined text-[18px]">timeline</span><span class="font-body-md text-body-md">Flow Analytics &amp; History</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="data-import" href="#"><span class="material-symbols-outlined text-[18px]">upload_file</span><span class="font-body-md text-body-md">Data Import</span></a></nav></div><div class="px-space-md pt-space-md"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Multi-Agent AI Telemetry</span><nav class="flex flex-col gap-1 mt-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-md rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="demand-forecast" href="#"><span class="material-symbols-outlined text-[18px]">trending_up</span><span class="font-body-md text-body-md">Demand Forecast</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="resource-monitor" href="#"><span class="material-symbols-outlined text-[18px]">inventory</span><span class="font-body-md text-body-md">Resource Monitor</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-recommendations" href="#"><span class="material-symbols-outlined text-[18px]">psychology</span><span class="font-body-md text-body-md">AI Recommendations</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="smartload-workload" href="#"><span class="material-symbols-outlined text-[18px]">balance</span><span class="font-body-md text-body-md">SMARTLOAD Workload</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="smartstress-surge" href="#"><span class="material-symbols-outlined text-[18px]">bolt</span><span class="font-body-md text-body-md">SMARTSTRESS Surge</span></a></nav></div></div><div class="p-space-md flex flex-col gap-space-xs bg-surface-container-lowest"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Governance</span><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-label-md rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="governance-and-audit" href="#"><span class="material-symbols-outlined text-[18px]">shield</span><span class="font-body-md text-body-md">Admin Governance</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="staff-profile" href="#"><span class="material-symbols-outlined text-[18px]">manage_accounts</span><span class="font-body-md text-body-md">Staff Profile</span></a></nav><div class="mt-space-xs pt-space-xs flex items-center justify-between px-space-sm text-outline font-label-sm text-label-sm"><span>NODE ID: ETU-TWIN-04</span><span>v2.8.4</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-margin"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg"><span class="material-symbols-outlined text-[16px] text-tertiary">domain</span><div class="flex items-center gap-space-xs font-label-sm text-label-sm"><button class="px-space-xs py-0.5 rounded bg-surface-container-lowest text-primary shadow-sm" type="button">Combined</button><button class="px-space-xs py-0.5 rounded text-on-surface-variant hover:text-on-surface" type="button">ETU Complex</button><button class="px-space-xs py-0.5 rounded text-on-surface-variant hover:text-on-surface" type="button">Accident Ward</button></div></div><div class="hidden xl:flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-secondary"></span><span>TWIN SYNC: <strong class="text-on-surface">99.8% LIVE</strong> (0.4s lag)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-full"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Role:</span><span class="font-label-sm text-label-sm text-primary font-bold">Charge Nurse / Triage Lead</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_drop_down</span></div><div class="flex items-center gap-space-xs"><button class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">notifications</span></button><button class="w-9 h-9 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">help</span></button></div><div class="h-6 w-px bg-surface-container-high"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface leading-tight">Sr. Elena Vance, RN</span><span class="font-label-sm text-label-sm text-outline leading-tight">ID #7729-BAY</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface flex-1 px-margin py-space-lg"><div class="flex flex-col w-full">
+<!-- Operational Disclaimer Banner -->
+<div class="mb-space-md p-space-sm rounded-lg bg-surface-container-high flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">science</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Prototype Demo Telemetry — Synthetic Digital Twin Simulator • Not Live Hospital Records</span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span> Sync Cycle: 250ms</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface font-semibold">Bay Node: ETU-TRAUMA-GW1</span>
+</div>
+</div>
+<!-- Operational Summary Counters Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter mb-space-lg">
+<!-- Card 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Total Arrivals Today</span>
+<span class="material-symbols-outlined text-[18px] text-primary">sensor_door</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">46</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">+8 vs yesterday</span>
+</div>
+<div class="mt-space-xs text-outline font-body-sm text-body-sm flex items-center gap-1">
+<span>Rolling 24h intake</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Currently In Unit</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">bed</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-primary tracking-tight">38</span>
+<span class="font-label-sm text-label-sm text-outline">Capacity: 44</span>
+</div>
+<div class="mt-space-xs text-on-surface-variant font-label-sm text-label-sm flex items-center justify-between">
+<span class="text-tertiary font-semibold">22 ETU Complex</span>
+<span class="text-outline">•</span>
+<span class="text-secondary font-semibold">16 Accident Ward</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Awaiting Step-down</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">transfer_within_a_station</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-secondary tracking-tight">7</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Patients pending beds</span>
+</div>
+<div class="mt-space-xs text-outline font-body-sm text-body-sm">
+<span>Ward bed allocation lag: ~18m</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Discharges Today</span>
+<span class="material-symbols-outlined text-[18px] text-primary-container">output</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">39</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">↑ 94% on target</span>
+</div>
+<div class="mt-space-xs text-outline font-body-sm text-body-sm">
+<span>32 Home / 7 Specialised Transfer</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Triage-To-Bed Avg</span>
+<span class="material-symbols-outlined text-[18px] text-primary">timer</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-primary tracking-tight">14</span>
+<span class="font-label-lg text-label-lg text-primary font-semibold">mins</span>
+</div>
+<div class="mt-space-xs text-outline font-body-sm text-body-sm flex items-center justify-between">
+<span>Benchmark: ≤ 20m</span>
+<span class="text-tertiary font-bold">OPTIMAL</span>
+</div>
+</div>
+</div>
+<!-- Operational Action & Filtering Bar -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm mb-space-lg flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<div class="flex-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<!-- Search Input -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-space-md py-2 text-on-surface bg-surface-container-low rounded-lg font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container" id="patientSearchInput" placeholder="Filter by Patient ID (e.g. PT-2026-0042), Name, or Symptom..." type="text"/>
+</div>
+<!-- Filters -->
+<div class="flex items-center gap-space-xs flex-wrap sm:flex-nowrap">
+<select class="px-space-sm py-2 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-primary-container" id="filterWard">
+<option value="all">All Wards (ETU + Accident)</option>
+<option value="ETU Complex">ETU Complex (22 Active)</option>
+<option value="Accident Ward">Accident Ward (16 Active)</option>
+</select>
+<select class="px-space-sm py-2 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-primary-container" id="filterAcuity">
+<option value="all">All Acuity Levels</option>
+<option value="Cat 1">Cat 1 • Resus (Immediate)</option>
+<option value="Cat 2">Cat 2 • Trauma (STAT 10m)</option>
+<option value="Cat 3">Cat 3 • Urgent (30m)</option>
+<option value="Cat 4">Cat 4/5 • Semi-Urgent</option>
+</select>
+<select class="px-space-sm py-2 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-primary-container" id="filterStatus">
+<option value="all">All Statuses</option>
+<option value="Under Treatment">Under Treatment</option>
+<option value="Active Intake">Active Intake</option>
+<option value="Awaiting Transfer">Awaiting Transfer</option>
+</select>
+</div>
+</div>
+<!-- Toggle Register Panel Primary Action Button -->
+<div class="flex items-center gap-space-sm">
+<button class="h-10 px-space-md rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all flex items-center justify-center gap-space-xs font-label-lg text-label-lg shadow-sm" id="toggleRegisterBtn" onclick="toggleRegistrationPanel()" type="button">
+<span class="material-symbols-outlined text-[20px]" id="registerIcon">person_add</span>
+<span id="registerBtnText">Register New Arrival</span>
+</button>
+<button class="h-10 px-space-sm rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center gap-space-xs font-label-md text-label-md" onclick="exportRecordsData()" title="Export Active FHIR Intake CSV" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="hidden sm:inline">Export</span>
+</button>
+</div>
+</div>
+<!-- Register New Patient Interactive Form Drawer (Collapsible) -->
+<div class="hidden mb-space-lg transition-all duration-300" id="registerPanel">
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-md">
+<!-- Panel Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-sm gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]">add_task</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Intake Admission &amp; Telemetry Enrollment</h3>
+<p class="font-body-sm text-body-sm text-outline">Synchronizes electronic health trajectory with digital twin bay simulation.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg self-start sm:self-auto">
+<span class="font-label-sm text-label-sm text-outline uppercase">Generated ID:</span>
+<span class="font-label-md text-label-md text-primary font-mono font-bold tracking-tight" id="autoGenId">PT-2026-0047</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary">lock</span>
+</div>
+</div>
+<!-- Form Grid -->
+<form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md" id="patientIntakeForm" onsubmit="handlePatientRegistration(event)">
+<!-- Full Name -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Patient Full Name <span class="text-error">*</span></label>
+<input class="px-space-sm py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container" id="formFullName" placeholder="e.g., Jonathan R. Miller" required="" type="text"/>
+</div>
+<!-- Age & Gender -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Age &amp; Biological Sex <span class="text-error">*</span></label>
+<div class="grid grid-cols-2 gap-space-xs">
+<input class="px-space-sm py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container" id="formAge" max="125" min="0" placeholder="Age (e.g. 54)" required="" type="number"/>
+<select class="px-space-sm py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" id="formGender">
+<option value="M">Male (M)</option>
+<option value="F">Female (F)</option>
+<option value="Other">Other / Non-disclosed</option>
+</select>
+</div>
+</div>
+<!-- Arrival Timestamp -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Arrival Timestamp</label>
+<div class="relative">
+<input class="w-full px-space-sm py-2 rounded-lg bg-surface-container text-on-surface-variant font-mono font-body-md text-body-md cursor-not-allowed" id="formArrivalTimestamp" readonly="" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-outline text-[18px]">schedule</span>
+</div>
+</div>
+<!-- Ward Destination Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Assigned Unit Area <span class="text-error">*</span></label>
+<div class="grid grid-cols-2 gap-space-xs">
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="text-primary focus:ring-primary" name="formArea" type="radio" value="ETU Complex"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">ETU Complex</span>
+<span class="font-body-sm text-body-sm text-outline">Bay 01-12 (Acute)</span>
+</div>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="text-primary focus:ring-primary" name="formArea" type="radio" value="Accident Ward"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Accident Ward</span>
+<span class="font-body-sm text-body-sm text-outline">Bay 13-24 (Surge)</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Triage Acuity Level -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Clinical Acuity Tier <span class="text-error">*</span></label>
+<select class="px-space-sm py-2 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-primary-container" id="formAcuityLevel">
+<option value="Cat 1">CAT 1 • Resus (Immediate Arrest / Hypoxia)</option>
+<option selected="" value="Cat 2">CAT 2 • Trauma (Severe MVA, STEMI, GCS &lt; 12)</option>
+<option value="Cat 3">CAT 3 • Urgent (Compound Fracture, Sepsis alert)</option>
+<option value="Cat 4">CAT 4 • Semi-Urgent (Mild Laceration, Contusion)</option>
+</select>
+</div>
+<!-- Assigned Initial Bay -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Recommended Bay Allocation</label>
+<select class="px-space-sm py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" id="formBaySelect">
+<option value="ETU Bay 05 (Telemetry Active)">ETU Bay 05 (Auto-routed: Ventilator Ready)</option>
+<option value="ETU Bay 08">ETU Bay 08 (Step-down Capable)</option>
+<option value="Accident Bay 14">Accident Bay 14 (Orthopedic Split)</option>
+<option value="Triage Holding C">Triage Holding C (Awaiting Bed Clear)</option>
+</select>
+</div>
+<!-- Presenting Complaint -->
+<div class="md:col-span-2 lg:col-span-3 flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Presenting Complaint &amp; Mechanism of Injury <span class="text-error">*</span></label>
+<input class="px-space-sm py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container" id="formPresentingComplaint" placeholder="e.g., Pedestrian struck by motor vehicle, severe pelvic tenderness, GCS 13, dyspnea on exertion" required="" type="text"/>
+</div>
+<!-- Initial Clinical Notes -->
+<div class="md:col-span-2 lg:col-span-3 flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Initial Primary Triage Assessment &amp; Field Vitals</label>
+<textarea class="px-space-sm py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container" id="formClinicalNotes" placeholder="Field Vitals: BP 94/58, HR 118 regular, SpO2 93% on room air. FAST scan recommended immediately upon bay placement..." rows="2"></textarea>
+</div>
+<!-- Submission Controls -->
+<div class="md:col-span-2 lg:col-span-3 flex items-center justify-between pt-space-xs">
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified_user</span> Stamped under Nurse Credential: Sr. Elena Vance, RN (#7729-BAY)
+          </span>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="resetRegistrationForm()" type="reset">
+              Reset Form
+            </button>
+<button class="px-space-lg py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors flex items-center gap-space-xs shadow-sm" type="submit">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Create Patient Record &amp; Sync Twin</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!-- Notification Banner for dynamic additions -->
+<div class="hidden mb-space-md p-space-sm rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-between shadow-sm transition-all duration-300" id="toastSuccess">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">check_circle</span>
+<span class="font-label-md text-label-md font-semibold" id="toastMessage">New patient arrival recorded and routed to bay.</span>
+</div>
+<button class="text-on-secondary-fixed hover:opacity-75" onclick="document.getElementById('toastSuccess').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Master Content Split: Main Table & Slide-out Inspection Card -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Active Patients Table (8 or 12 cols dependent on slide-out state) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md transition-all duration-300" id="patientTableContainer">
+<div class="rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<!-- Table Control Subheader -->
+<div class="px-space-md py-space-sm bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Live Ward Patient Manifest</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold" id="recordsCountBadge">6 Records Loaded</span>
+</div>
+<div class="flex items-center gap-space-xs text-outline font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Real-time FHIR Ingestion Active</span>
+</div>
+</div>
+<!-- Responsive Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-md">Patient ID &amp; Name</th>
+<th class="py-space-sm px-space-sm">Age/Sex</th>
+<th class="py-space-sm px-space-sm">Unit &amp; Bay</th>
+<th class="py-space-sm px-space-sm">Acuity</th>
+<th class="py-space-sm px-space-sm">Presenting Complaint</th>
+<th class="py-space-sm px-space-sm">Status</th>
+<th class="py-space-sm px-space-sm">Arr. Time</th>
+<th class="py-space-sm px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface divide-y-0" id="patientTableBody">
+<!-- Row 1: PT-2026-0042 (Selected default) -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer bg-surface-container-low" onclick="selectPatientRow('PT-2026-0042')">
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">PT-2026-0042</span>
+<span class="font-label-md text-label-md text-on-surface">Marcus Reed</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-on-surface-variant">42 / M</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary bg-surface-container px-2 py-0.5 rounded font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> ETU Bay 02
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span> CAT 2 TRAUMA
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm max-w-xs truncate" title="Blunt thoracic impact post-collision, hypoxia">
+<span class="text-body-sm font-medium">Blunt chest trauma / dyspnea post-MVA</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-primary font-semibold">
+                    Under Treatment
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-outline">14:15</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1" onclick="event.stopPropagation()">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="selectPatientRow('PT-2026-0042')" title="View Patient Timeline">
+<span class="material-symbols-outlined text-[18px]">timeline</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary" onclick="quickUpdateStatus('PT-2026-0042')" title="Update Acuity &amp; Ward">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectPatientRow('PT-2026-0046')">
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">PT-2026-0046</span>
+<span class="font-label-md text-label-md text-on-surface">Sophia Chen</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-on-surface-variant">29 / F</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Accident Bay 07
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-primary font-bold inline-flex items-center gap-1">
+                    CAT 3 URGENT
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm max-w-xs truncate" title="Left distal radius angulated fracture">
+<span class="text-body-sm">Closed wrist fracture &amp; deformity</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface-variant font-semibold">
+                    Active Intake
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-outline">15:02</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1" onclick="event.stopPropagation()">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="selectPatientRow('PT-2026-0046')" title="View Patient Timeline">
+<span class="material-symbols-outlined text-[18px]">timeline</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary" onclick="quickUpdateStatus('PT-2026-0046')" title="Update Acuity &amp; Ward">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectPatientRow('PT-2026-0045')">
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">PT-2026-0045</span>
+<span class="font-label-md text-label-md text-on-surface">Arthur Pendelton</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-on-surface-variant">68 / M</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-error bg-error-container px-2 py-0.5 rounded font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span> ETU Resus 01
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> CAT 1 RESUS
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm max-w-xs truncate" title="Anterior STEMI, crushing retrosternal pain">
+<span class="text-body-sm font-medium">Acute Coronary Syndrome, severe diaphoresis</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-error font-bold">
+                    Under Treatment
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-outline">14:50</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1" onclick="event.stopPropagation()">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="selectPatientRow('PT-2026-0045')" title="View Patient Timeline">
+<span class="material-symbols-outlined text-[18px]">timeline</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary" onclick="quickUpdateStatus('PT-2026-0045')" title="Update Acuity &amp; Ward">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectPatientRow('PT-2026-0044')">
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">PT-2026-0044</span>
+<span class="font-label-md text-label-md text-on-surface">Laila Morales</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-on-surface-variant">36 / F</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary bg-surface-container px-2 py-0.5 rounded font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> ETU Bay 09
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-primary font-bold inline-flex items-center gap-1">
+                    CAT 3 URGENT
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm max-w-xs truncate" title="Acute RLQ abdominal pain, rebound tenderness">
+<span class="text-body-sm">Suspected Appendicitis, fever 38.6C</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-secondary font-semibold">
+                    Awaiting Transfer
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-outline">14:38</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1" onclick="event.stopPropagation()">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="selectPatientRow('PT-2026-0044')" title="View Patient Timeline">
+<span class="material-symbols-outlined text-[18px]">timeline</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary" onclick="quickUpdateStatus('PT-2026-0044')" title="Update Acuity &amp; Ward">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectPatientRow('PT-2026-0043')">
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">PT-2026-0043</span>
+<span class="font-label-md text-label-md text-on-surface">David O'Connor</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-on-surface-variant">51 / M</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Accident Bay 11
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-outline font-bold inline-flex items-center gap-1">
+                    CAT 4 MINOR
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm max-w-xs truncate" title="Superficial 6cm forearm laceration from glass">
+<span class="text-body-sm">Forearm laceration, hemostasis achieved</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-outline font-semibold">
+                    Under Treatment
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-outline">14:26</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1" onclick="event.stopPropagation()">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="selectPatientRow('PT-2026-0043')" title="View Patient Timeline">
+<span class="material-symbols-outlined text-[18px]">timeline</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary" onclick="quickUpdateStatus('PT-2026-0043')" title="Update Acuity &amp; Ward">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectPatientRow('PT-2026-0041')">
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">PT-2026-0041</span>
+<span class="font-label-md text-label-md text-on-surface">Helena Rostova</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-on-surface-variant">74 / F</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary bg-surface-container px-2 py-0.5 rounded font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> ETU Bay 04
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-bold inline-flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> CAT 2 TRAUMA
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm max-w-xs truncate" title="Syncopal collapse from standing height, forehead contusion">
+<span class="text-body-sm">Syncope / Head strike post-fall, Warfarin</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-primary font-semibold">
+                    Under Treatment
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm font-mono text-body-sm text-outline">13:58</td>
+<td class="py-space-sm px-space-md text-right">
+<div class="inline-flex items-center gap-1" onclick="event.stopPropagation()">
+<button class="p-1 rounded hover:bg-surface-container text-primary" onclick="selectPatientRow('PT-2026-0041')" title="View Patient Timeline">
+<span class="material-symbols-outlined text-[18px]">timeline</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-secondary" onclick="quickUpdateStatus('PT-2026-0041')" title="Update Acuity &amp; Ward">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-xs text-outline font-label-sm text-label-sm">
+<div class="flex items-center gap-space-sm">
+<span>Showing <strong class="text-on-surface">1 – 6</strong> of 38 active admitted patients</span>
+<span class="hidden md:inline">•</span>
+<span class="hidden md:inline">Nurse Station Console: STJ-ED-TRG02</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-bold">1</span>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high">2</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high">3</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Triage Legend & Ward Map Callout -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md flex-wrap">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Acuity Guidelines:</span>
+<span class="inline-flex items-center gap-1 text-on-surface font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-error"></span> Cat 1: Immediate Resus</span>
+<span class="inline-flex items-center gap-1 text-on-surface font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-error-container"></span> Cat 2: 10m Trauma</span>
+<span class="inline-flex items-center gap-1 text-on-surface font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-primary-container"></span> Cat 3: 30m Urgent</span>
+<span class="inline-flex items-center gap-1 text-on-surface font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-outline"></span> Cat 4/5: Minor Care</span>
+</div>
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">meeting_room</span>
+<span>Resus Bays: 2 Available / 4 Total</span>
+</div>
+</div>
+</div>
+<!-- Patient Detail & Flow Timeline Slide-out / Detail Panel (4 cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md sticky top-20" id="patientDetailPanel">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-md">
+<!-- Header with Avatar and ID -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[26px]">medical_services</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight" id="detailPatientName">Marcus Reed</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-bold" id="detailAcuityBadge">CAT 2</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline" id="detailPatientMeta">PT-2026-0042 • 42yo Male • ETU Bay 02</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-outline hover:text-on-surface" onclick="closeDetailPanel()" title="Close Panel">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Clinical Vitals Bar Graph / Sparkline Widget -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<span>Bay 02 Bedside Telemetry</span>
+<span class="text-primary font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span> STREAMING</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center py-1">
+<div class="bg-surface-container-lowest p-2 rounded">
+<span class="text-outline font-label-sm text-label-sm">HR (BPM)</span>
+<p class="font-headline-sm text-headline-sm text-error font-mono leading-none mt-1">104</p>
+<span class="text-outline font-label-sm text-label-sm">Sinus Tach</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded">
+<span class="text-outline font-label-sm text-label-sm">BP (mmHg)</span>
+<p class="font-headline-sm text-headline-sm text-on-surface font-mono leading-none mt-1">108/68</p>
+<span class="text-outline font-label-sm text-label-sm">MAP 81</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded">
+<span class="text-outline font-label-sm text-label-sm">SpO2</span>
+<p class="font-headline-sm text-headline-sm text-primary font-mono leading-none mt-1">94%</p>
+<span class="text-outline font-label-sm text-label-sm">2L NC</span>
+</div>
+</div>
+<!-- Micro Waveform SVG -->
+<div class="w-full h-8 bg-surface-container-lowest rounded p-1 flex items-center">
+<svg class="w-full h-full text-secondary stroke-current" fill="none" viewbox="0 0 240 28">
+<path d="M0,14 L30,14 L35,6 L40,24 L45,2 L50,18 L55,14 L110,14 L115,6 L120,24 L125,2 L130,18 L135,14 L190,14 L195,6 L200,24 L205,2 L210,18 L215,14 L240,14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</div>
+<!-- Presenting History Summary -->
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Clinical Synopsis</span>
+<p class="font-body-sm text-body-sm text-on-surface bg-surface-container-low p-space-sm rounded-lg" id="detailSynopsis">
+            42-year-old restrained driver involved in high-speed side-impact collision. Presenting with severe pleuritic right lower rib pain, tachypnea, and GCS 14. EFAST negative at 14:48. Repeat hemoglobin ordered.
+          </p>
+</div>
+<!-- 4-Step Patient Flow Timeline -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Patient Flow Timeline</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">T+ 1h 15m in Unit</span>
+</div>
+<div class="relative pl-6 space-y-4 before:content-[''] before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<!-- Step 1 -->
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-primary flex items-center justify-center ring-4 ring-surface-container-lowest"></div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Patient Arrival Recorded</span>
+<span class="font-mono font-label-sm text-label-sm text-outline">14:15</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">RN Davies • Triage Intake Desk 02</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-primary flex items-center justify-center ring-4 ring-surface-container-lowest"></div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Bay Assigned &amp; Vitals Synchronized</span>
+<span class="font-mono font-label-sm text-label-sm text-outline">14:22</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">ETU Bay 02 • Dr. Vance / Bed Telemetry Online</span>
+</div>
+</div>
+<!-- Step 3 (AI Recommendation Executed) -->
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-secondary flex items-center justify-center ring-4 ring-surface-container-lowest"></div>
+<div class="flex flex-col p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">psychology</span> AI Recommendation Executed
+                  </span>
+<span class="font-mono font-label-sm text-label-sm text-secondary font-bold">14:48</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface">Agent 3 Rec #4091: STAT Trauma Ultrasound (EFAST) &amp; CTA Chest</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-3.5 h-3.5 rounded-full bg-surface-container-high ring-4 ring-surface-container-lowest"></div>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-outline">Pre-Discharge / Step-down Assessment</span>
+<span class="font-mono font-label-sm text-label-sm text-outline">15:30</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Pending post-CT evaluation and surgical review</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel Controls -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="px-space-sm py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-center gap-1" onclick="triggerQuickOrder('STAT Ultrasound / Labs')">
+<span class="material-symbols-outlined text-[16px]">biotech</span> Order Labs / Labs
+            </button>
+<button class="px-space-sm py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-center gap-1" onclick="triggerQuickOrder('Bed Transfer to Trauma Stepdown')">
+<span class="material-symbols-outlined text-[16px]">move_up</span> Transfer Bed
+            </button>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md flex items-center justify-center gap-1 shadow-sm" onclick="recordDischargeWorkflow('PT-2026-0042')">
+<span class="material-symbols-outlined text-[18px]">logout</span> Initiate Discharge Protocol
+          </button>
+</div>
+<!-- Non-diagnostic disclaimer footer -->
+<div class="p-2 rounded bg-surface-container-low text-center">
+<p class="font-body-sm text-body-sm text-outline text-[11px] leading-tight">
+            Digital twin recommendations are advisory. Formal medical judgment resides with attending emergency physicians.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic current time initialization
+  function updateTimestampField() {
+    const now = new Date();
+    const formatted = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + ' ' + 
+                      now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+    const tsField = document.getElementById('formArrivalTimestamp');
+    if (tsField) {
+      tsField.value = formatted;
+    }
+  }
+  updateTimestampField();
+  setInterval(updateTimestampField, 1000);
+
+  // Toggle Register New Patient panel
+  let isPanelOpen = false;
+  function toggleRegistrationPanel() {
+    const panel = document.getElementById('registerPanel');
+    const icon = document.getElementById('registerIcon');
+    const btnText = document.getElementById('registerBtnText');
+    const btn = document.getElementById('toggleRegisterBtn');
+
+    isPanelOpen = !isPanelOpen;
+    if (isPanelOpen) {
+      panel.classList.remove('hidden');
+      icon.innerText = 'close';
+      btnText.innerText = 'Cancel Intake';
+      btn.classList.add('bg-error');
+      btn.classList.remove('bg-primary');
+      document.getElementById('formFullName').focus();
+    } else {
+      panel.classList.add('hidden');
+      icon.innerText = 'person_add';
+      btnText.innerText = 'Register New Arrival';
+      btn.classList.remove('bg-error');
+      btn.classList.add('bg-primary');
+    }
+  }
+
+  // Handle new patient registration
+  let nextPatientSeq = 47;
+  function handlePatientRegistration(e) {
+    e.preventDefault();
+    const fullName = document.getElementById('formFullName').value.trim();
+    const age = document.getElementById('formAge').value;
+    const gender = document.getElementById('formGender').value;
+    const area = document.querySelector('input[name="formArea"]:checked').value;
+    const acuity = document.getElementById('formAcuityLevel').value;
+    const complaint = document.getElementById('formPresentingComplaint').value.trim();
+    const bay = document.getElementById('formBaySelect').value;
+    const patientId = `PT-2026-00${nextPatientSeq}`;
+
+    // Create new table row dynamically at top of table
+    const tableBody = document.getElementById('patientTableBody');
+    const tr = document.createElement('tr');
+    tr.className = 'hover:bg-surface-container-low transition-colors cursor-pointer bg-surface-container-high';
+    tr.setAttribute('onclick', `selectPatientRow('${patientId}')`);
+
+    let acuityBadge = '';
+    if (acuity.includes('Cat 1')) {
+      acuityBadge = '<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-bold inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-error"></span> CAT 1 RESUS</span>';
+    } else if (acuity.includes('Cat 2')) {
+      acuityBadge = '<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-bold inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span> CAT 2 TRAUMA</span>';
+    } else if (acuity.includes('Cat 3')) {
+      acuityBadge = '<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-primary font-bold inline-flex items-center gap-1">CAT 3 URGENT</span>';
+    } else {
+      acuityBadge = '<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-outline font-bold inline-flex items-center gap-1">CAT 4 MINOR</span>';
+    }
+
+    const nowTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+
+    tr.innerHTML = `
+      <td class="py-space-sm px-space-md">
+        <div class="flex flex-col">
+          <span class="font-label-md text-label-md text-primary font-bold">${patientId}</span>
+          <span class="font-label-md text-label-md text-on-surface">${fullName}</span>
+        </div>
+      </td>
+      <td class="py-space-sm px-space-sm font-mono text-body-sm text-on-surface-variant">${age} / ${gender}</td>
+      <td class="py-space-sm px-space-sm">
+        <span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary bg-surface-container px-2 py-0.5 rounded font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> ${bay.split('(')[0].trim()}
+        </span>
+      </td>
+      <td class="py-space-sm px-space-sm">${acuityBadge}</td>
+      <td class="py-space-sm px-space-sm max-w-xs truncate" title="${complaint}">
+        <span class="text-body-sm font-medium">${complaint}</span>
+      </td>
+      <td class="py-space-sm px-space-sm">
+        <span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-primary font-semibold">
+          Active Intake
+        </span>
+      </td>
+      <td class="py-space-sm px-space-sm font-mono text-body-sm text-outline">${nowTime}</td>
+      <td class="py-space-sm px-space-md text-right">
+        <div class="inline-flex items-center gap-1" onclick="event.stopPropagation()">
+          <button onclick="selectPatientRow('${patientId}')" class="p-1 rounded hover:bg-surface-container text-primary" title="View Patient Timeline">
+            <span class="material-symbols-outlined text-[18px]">timeline</span>
+          </button>
+          <button onclick="quickUpdateStatus('${patientId}')" class="p-1 rounded hover:bg-surface-container text-secondary" title="Update Acuity & Ward">
+            <span class="material-symbols-outlined text-[18px]">edit_note</span>
+          </button>
+        </div>
+      </td>
+    `;
+
+    tableBody.insertBefore(tr, tableBody.firstChild);
+
+    // Update sequence and UI counters
+    nextPatientSeq++;
+    document.getElementById('autoGenId').innerText = `PT-2026-00${nextPatientSeq}`;
+
+    const countBadge = document.getElementById('recordsCountBadge');
+    if (countBadge) {
+      countBadge.innerText = '7 Records Loaded';
+    }
+
+    // Show toast
+    const toast = document.getElementById('toastSuccess');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.innerText = `Record created: ${fullName} (${patientId}) assigned to ${bay.split('(')[0].trim()}`;
+    toast.classList.remove('hidden');
+
+    // Reset & close drawer
+    document.getElementById('patientIntakeForm').reset();
+    toggleRegistrationPanel();
+  }
+
+  function resetRegistrationForm() {
+    document.getElementById('patientIntakeForm').reset();
+    updateTimestampField();
+  }
+
+  // Row selection to populate detail panel
+  const patientDataMap = {
+    'PT-2026-0042': {
+      name: 'Marcus Reed',
+      acuity: 'CAT 2',
+      meta: 'PT-2026-0042 &bull; 42yo Male &bull; ETU Bay 02',
+      synopsis: '42-year-old restrained driver involved in high-speed side-impact collision. Presenting with severe pleuritic right lower rib pain, tachypnea, and GCS 14. EFAST negative at 14:48. Repeat hemoglobin ordered.'
+    },
+    'PT-2026-0046': {
+      name: 'Sophia Chen',
+      acuity: 'CAT 3',
+      meta: 'PT-2026-0046 &bull; 29yo Female &bull; Accident Bay 07',
+      synopsis: '29-year-old cyclist fell onto outstretched left hand. Obvious dinner-fork deformity of distal radius. Radial pulse 2+ symmetric. Neurovascular exam intact. X-rays pending.'
+    },
+    'PT-2026-0045': {
+      name: 'Arthur Pendelton',
+      acuity: 'CAT 1',
+      meta: 'PT-2026-0045 &bull; 68yo Male &bull; ETU Resus 01',
+      synopsis: 'Acute severe substernal crushing chest pain radiating to left jaw. ECG shows 3mm ST elevation in leads II, III, aVF. Cardiac cath lab activated. Dual antiplatelet therapy administered.'
+    },
+    'PT-2026-0044': {
+      name: 'Laila Morales',
+      acuity: 'CAT 3',
+      meta: 'PT-2026-0044 &bull; 36yo Female &bull; ETU Bay 09',
+      synopsis: 'Progressive right iliac fossa pain over 18 hours. Anorexia, low-grade pyrexia. Guarding present over McBurney point. Surgical team paged for appendectomy consult.'
+    },
+    'PT-2026-0043': {
+      name: 'David O\'Connor',
+      acuity: 'CAT 4',
+      meta: 'PT-2026-0043 &bull; 51yo Male &bull; Accident Bay 11',
+      synopsis: 'Glass shatter injury to dorsal left forearm. Full tendon motility preserved. Hemostasis achieved. Prepared for bedside primary wound closure and tetanus booster.'
+    },
+    'PT-2026-0041': {
+      name: 'Helena Rostova',
+      acuity: 'CAT 2',
+      meta: 'PT-2026-0041 &bull; 74yo Female &bull; ETU Bay 04',
+      synopsis: 'Mechanical trip and fall from standing with brief loss of consciousness. On chronic oral anticoagulation. Urgent non-contrast cranial CT indicated to rule out subdural hematoma.'
+    }
+  };
+
+  function selectPatientRow(id) {
+    const detailPanel = document.getElementById('patientDetailPanel');
+    const tableContainer = document.getElementById('patientTableContainer');
+    
+    // Ensure panel visible
+    detailPanel.classList.remove('hidden');
+    tableContainer.classList.remove('xl:col-span-12');
+    tableContainer.classList.add('xl:col-span-8');
+
+    const data = patientDataMap[id] || {
+      name: 'New Registered Arrival',
+      acuity: 'CAT 2',
+      meta: `${id} &bull; Clinical Observation`,
+      synopsis: 'Intake initiated via triage console. Baseline continuous telemetry recording.'
+    };
+
+    document.getElementById('detailPatientName').innerText = data.name;
+    document.getElementById('detailAcuityBadge').innerText = data.acuity;
+    document.getElementById('detailPatientMeta').innerHTML = data.meta;
+    document.getElementById('detailSynopsis').innerText = data.synopsis;
+  }
+
+  function closeDetailPanel() {
+    const detailPanel = document.getElementById('patientDetailPanel');
+    const tableContainer = document.getElementById('patientTableContainer');
+    detailPanel.classList.add('hidden');
+    tableContainer.classList.remove('xl:col-span-8');
+    tableContainer.classList.add('xl:col-span-12');
+  }
+
+  function quickUpdateStatus(id) {
+    const toast = document.getElementById('toastSuccess');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.innerText = `Audit Status for ${id}: Updated acuity telemetry & physician reassessment flagged.`;
+    toast.classList.remove('hidden');
+  }
+
+  function triggerQuickOrder(orderName) {
+    const toast = document.getElementById('toastSuccess');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.innerText = `Stat Order Generated: "${orderName}" pushed to Digital Twin workflow queue.`;
+    toast.classList.remove('hidden');
+  }
+
+  function recordDischargeWorkflow(id) {
+    const toast = document.getElementById('toastSuccess');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.innerText = `Discharge Protocol initiated for ${id}. Bed clearance countdown started.`;
+    toast.classList.remove('hidden');
+  }
+
+  function exportRecordsData() {
+    const toast = document.getElementById('toastSuccess');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.innerText = `Exporting encrypted CSV manifest: 38 Patient Records & Telemetry Logs.`;
+    toast.classList.remove('hidden');
+  }
+
+  // Filter and search live filtering
+  const searchInput = document.getElementById('patientSearchInput');
+  const wardSelect = document.getElementById('filterWard');
+  const acuitySelect = document.getElementById('filterAcuity');
+
+  function applyTableFilters() {
+    const term = searchInput.value.toLowerCase();
+    const ward = wardSelect.value;
+    const acuity = acuitySelect.value;
+    const rows = document.querySelectorAll('#patientTableBody tr');
+
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      const matchesSearch = text.includes(term);
+      const matchesWard = (ward === 'all') || text.includes(ward.toLowerCase());
+      const matchesAcuity = (acuity === 'all') || text.includes(acuity.toLowerCase());
+
+      if (matchesSearch && matchesWard && matchesAcuity) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  searchInput.addEventListener('input', applyTableFilters);
+  wardSelect.addEventListener('change', applyTableFilters);
+  acuitySelect.addEventListener('change', applyTableFilters);
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-margin py-space-sm"><div class="w-full flex flex-col md:flex-row items-center justify-between gap-space-xs text-outline font-label-sm text-label-sm"><span>St. Jude Academic Trauma Center • Emergency Medicine Operations Digital Twin</span><div class="flex items-center gap-space-md"><span>Telemetry Frequency: 250ms</span><span>FHIR HL7 Synchronized</span><span class="text-primary font-bold">CLINICAL RESTRAINT CODE BLUE READY</span></div></div></footer></div></body></html>

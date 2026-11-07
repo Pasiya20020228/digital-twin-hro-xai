@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-variant":"#d7e2ff","secondary-fixed":"#89f5e7","secondary-fixed-dim":"#6bd8cb","tertiary-fixed-dim":"#bcc7de","on-primary-fixed":"#00164d","error":"#ba1a1a","surface-container-lowest":"#ffffff","outline":"#747686","tertiary-fixed":"#d8e3fb","on-secondary":"#ffffff","on-surface":"#041b3c","tertiary":"#3f4a5e","primary-fixed":"#dce1ff","primary":"#003fb3","on-error":"#ffffff","on-tertiary":"#ffffff","on-secondary-fixed":"#00201d","primary-fixed-dim":"#b5c4ff","on-surface-variant":"#434654","on-tertiary-container":"#d3def6","on-background":"#041b3c","surface":"#f9f9ff","on-primary-container":"#d5dcff","on-error-container":"#93000a","inverse-primary":"#b5c4ff","on-tertiary-fixed":"#111c2d","secondary":"#006a61","error-container":"#ffdad6","on-primary":"#ffffff","surface-tint":"#1f54d3","surface-container-low":"#f1f3ff","secondary-container":"#86f2e4","on-secondary-fixed-variant":"#005049","tertiary-container":"#576276","on-secondary-container":"#006f66","background":"#f9f9ff","surface-container-high":"#e0e8ff","inverse-on-surface":"#edf0ff","surface-container-highest":"#d7e2ff","primary-container":"#2457d6","on-tertiary-fixed-variant":"#3c475a","outline-variant":"#c3c5d7","inverse-surface":"#1d3052","surface-container":"#e8edff","surface-bright":"#f9f9ff","surface-dim":"#cadaff","on-primary-fixed-variant":"#003cad"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1.25rem","gutter":"1rem","space-md":"0.75rem","space-sm":"0.5rem","space-xl":"2rem","space-xs":"0.25rem","space-lg":"1.25rem"},"fontFamily":{"body-lg":["Inter"],"body-md":["Inter"],"headline-xl":["Inter"],"headline-xl-mobile":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"headline-lg":["Inter"],"telemetry-data":["JetBrains Mono"],"headline-md":["Inter"],"headline-sm":["Inter"],"label-md":["Inter"],"code-sm":["JetBrains Mono"],"metric-display":["JetBrains Mono"]},"fontSize":{"body-lg":["15px",{"lineHeight":"22px","fontWeight":"400"}],"body-md":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-xl-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"telemetry-data":["13px",{"lineHeight":"16px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["15px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"code-sm":["11px",{"lineHeight":"14px","fontWeight":"400"}],"metric-display":["28px",{"lineHeight":"32px","letterSpacing":"-0.03em","fontWeight":"600"}]}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col min-h-0"><div class="p-space-md pb-space-sm"><div class="flex items-center gap-space-sm mb-space-xs"><img alt="ETU Intelligence Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V_yLI12E7UPFu9FOWtL3c6iZyTCAFZGYiRCXzsrecX13od_OKg_zm8YgCqm4n84PvZPIp4V2VqP54OyRhYZvixsskh1NbQyr9U1MUkM3_MwrVSpfGO10_DcPHFgNv6Sm5yDPzV2_kB3Bo2rZAFwCP3IRRkTrqfCPpWlzjGiSmWgNK5IS_PMz8LVj13gVW4AxbtzgPJV6OCPn91e4ZraWsbbo03QkmRLXRyLalEELj38ZLLLJO2oAafVA"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate leading-tight">ETU Intelligence</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">NHSL Colombo</span></div></div><div class="flex items-center justify-between mt-space-xs"><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-code-sm text-code-sm font-semibold">2027 Twin v3.4</span><span class="font-label-sm text-label-sm text-secondary font-medium flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Online</span></div></div><div class="mx-space-md mb-space-sm p-space-xs bg-surface-container-low rounded"><p class="font-label-sm text-label-sm text-tertiary text-center leading-snug tracking-tight font-medium">DEMO ENVIRONMENT • SIMULATED DATA</p></div><nav class="flex-1 px-space-sm space-y-0.5 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#overview"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Overview</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="digital-twin" href="#digital-twin"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">view_in_ar</span><span class="font-body-md text-body-md">ETU Digital Twin</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-medium">LIVE 3D</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="patient-flow" href="#patient-flow"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">conversion_path</span><span class="font-body-md text-body-md">Patient Flow</span></div><span class="font-telemetry-data text-telemetry-data px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant">42 Active</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="bed-management" href="#bed-management"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">single_bed</span><span class="font-body-md text-body-md">Bed Management</span></div><span class="font-telemetry-data text-telemetry-data px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant">88%</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="resource-forecasting" href="#forecasting"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">trending_up</span><span class="font-body-md text-body-md">Resource Forecasting</span></div><span class="font-telemetry-data text-telemetry-data px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant">+6h</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-recommendations" href="#recommendations"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span class="font-body-md text-body-md">AI Recommendations</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container-high text-primary font-semibold">3 Pending</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-agent-center" href="#agent-center"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">smart_toy</span><span class="font-body-md text-body-md">AI Agent Center</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container">3 Online</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="staff-equipment" href="#staff-equipment"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">medical_services</span><span class="font-body-md text-body-md">Staff & Equipment</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="alerts-incidents" href="#alerts"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">emergency</span><span class="font-body-md text-body-md">Alerts & Incidents</span></div><span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-semibold">2 Crit</span></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="analytics-reports" href="#analytics"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">monitoring</span><span class="font-body-md text-body-md">Analytics & Reports</span></div></a><a class="flex items-center justify-between px-space-sm py-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings-audit-logs" href="#settings"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">shield</span><span class="font-body-md text-body-md">Settings & Audit</span></div></a></nav></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center justify-between mb-1"><span class="font-label-sm text-label-sm text-on-surface-variant">Twin Precision Status</span><span class="font-code-sm text-code-sm text-secondary font-medium">99.8%</span></div><div class="w-full bg-surface-container-highest rounded-full h-1"><div class="bg-secondary h-1 rounded-full w-[99.8%]"></div></div><p class="font-label-sm text-label-sm text-tertiary mt-2 text-center">ETU Console v3.4 • SLA Tier 1</p></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span><span class="w-2 h-2 rounded-full bg-secondary -ml-3"></span><span class="font-code-sm text-code-sm text-on-surface font-semibold tracking-wide uppercase">LIVE SIMULATION ENGINE</span></div><span class="text-outline-variant">|</span><span class="font-telemetry-data text-telemetry-data text-on-surface-variant">120s sync active</span></div><div class="flex-1 max-w-md mx-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-[18px] text-outline">search</span><input class="w-full bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm pl-9 pr-12 py-1.5 rounded border border-outline-variant focus:outline-none focus:border-primary" placeholder="Search Case ID, Bed ID, Agent, Staff..." type="text"/><kbd class="absolute right-2.5 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-code-sm text-code-sm font-medium">⌘K</kbd></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1.5 bg-surface-container-low px-2 py-1 rounded"><span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span><span class="font-telemetry-data text-telemetry-data text-on-surface">CMB 14:42:18</span></div><div class="flex items-center bg-surface-container-high rounded p-0.5"><button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold shadow-sm">Live</button><button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm">Forecast</button></div><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-2.5 pl-2"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv12TvhOjJ0sXJVsqaCcSQMjhuvkuU9Ak8TCxVZmEblPxxre6_AE4UM1BengCZiqwfvZj8xCDN-umrRfKC9VgsNySLkZy7lG7i7oj2fAclpMRWMQpW8soA0kvRpNbpqsbVkuvK2k9wQUMRgEsEBxw4PPiBZaIqvrTSZN86LnyycmGwX3Rrzpiwwv1pVYk0DsQbUsPJdAmiZaMkh9IZDY8Ek5ImamuKd8KK-m0mKEdRB9kkG2vy97E"/><div class="flex flex-col text-left"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm leading-tight text-on-surface">Dr. K. Wickramasinghe</span><span class="px-1.5 py-0.2 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">Admin</span></div><span class="font-label-sm text-label-sm text-on-surface-variant">Clinical Operations Director</span></div></div></div></header><main class="relative pt-16 bg-background min-h-screen"><div class="w-full bg-surface-container-low px-space-lg py-1 flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[15px] text-tertiary">info</span><span class="font-label-sm text-label-sm">SIMULATION MODE ACTIVE: Synthetic twin patient streams generated for validation testing. Clinical triage triggers enabled.</span></div><span class="font-code-sm text-code-sm text-secondary font-medium">ENGINE ID: SIM_ETU_084</span></div><div class="w-full px-space-margin py-space-md"><div class="flex flex-col w-full">
+<!-- Disclaimer Banner -->
+<div class="mb-space-md p-space-sm bg-error-container text-on-error-container rounded-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-error">warning</span>
+<span class="font-label-md text-label-md uppercase tracking-wider font-semibold">Demo Environment — Simulated Data — Not Connected to Live Hospital Systems</span>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface">ETU DIGITAL TWIN • SIM_ENGINE_V3.4</span>
+</div>
+<!-- Digital Twin Control Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md mb-space-md shadow-sm flex flex-col gap-space-sm">
+<!-- Top Row: Layers, Scenarios, Views -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<!-- Layer Toggles -->
+<div class="flex items-center gap-1.5 bg-surface-container-low p-1 rounded-lg">
+<button class="px-2.5 py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm transition-all" id="layer-beds">
+<span class="material-symbols-outlined text-[15px]">single_bed</span> Bed Occupancy
+        </button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1 transition-all" id="layer-heat">
+<span class="material-symbols-outlined text-[15px]">local_fire_department</span> Congestion Heatmap
+        </button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1 transition-all" id="layer-staff">
+<span class="material-symbols-outlined text-[15px]">group</span> Staff Overlay
+        </button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1 transition-all" id="layer-o2">
+<span class="material-symbols-outlined text-[15px]">air</span> Medical Gas / O2
+        </button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1 transition-all" id="layer-hazard">
+<span class="material-symbols-outlined text-[15px]">grain</span> Airborne Flow
+        </button>
+</div>
+<!-- Scenarios and Projection Toggle -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Scenario:</span>
+<select class="bg-surface-container-low text-on-surface font-body-sm text-body-sm px-2.5 py-1 rounded focus:outline-none focus:bg-surface-container cursor-pointer" id="scenario-selector">
+<option value="baseline">Baseline Current Flow (48 Beds active)</option>
+<option selected="" value="scenario_a">Scenario A: Expedited Ward 12 Decant (+4 Beds)</option>
+<option value="scenario_b">Scenario B: Ambulatory Divert (OPD Shift)</option>
+</select>
+</div>
+<div class="flex items-center bg-surface-container-low rounded p-0.5">
+<button class="px-2 py-1 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold shadow-sm flex items-center gap-1" id="btn-ortho">
+<span class="material-symbols-outlined text-[14px]">grid_view</span> 2D Ortho
+          </button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1" id="btn-iso">
+<span class="material-symbols-outlined text-[14px]">view_in_ar</span> Isometric
+          </button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<button class="p-1.5 hover:bg-surface-container rounded" title="Reset Zoom">
+<span class="material-symbols-outlined text-[18px]">crop_free</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container rounded" title="Fullscreen">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Timeline Scrub Bar -->
+<div class="flex items-center gap-space-md pt-space-xs bg-surface-container-low px-space-md py-2 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-[140px]">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-code-sm text-code-sm font-semibold text-on-surface" id="current-sim-time">SIM LIVE 14:42</span>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<input class="w-full accent-primary h-1.5 rounded-lg cursor-pointer bg-surface-container-high" id="simTimeline" max="100" min="0" type="range" value="0"/>
+<div class="flex justify-between font-code-sm text-code-sm text-on-surface-variant mt-1 px-1">
+<span class="text-secondary font-semibold">Now 14:42 (Live)</span>
+<span>15:15 Transfer Window</span>
+<span class="text-error font-semibold">16:30 Surge Peak (+9)</span>
+<span>17:15 Ward Handover</span>
+<span>18:00 Post-Resolution</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">fast_rewind</span>
+</button>
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1" id="sim-play-btn">
+<span class="material-symbols-outlined text-[15px]">play_arrow</span> Play Sim
+        </button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">fast_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Twin Canvas & Context Split Screen -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- Spatial Canvas (8 Cols desktop) -->
+<div class="lg:col-span-8 flex flex-col bg-[#0B132B] rounded-xl overflow-hidden shadow-xl relative">
+<!-- Dark Floorplan Operational Header overlay -->
+<div class="absolute top-0 left-0 right-0 p-3 bg-gradient-to-b from-[#0B132B]/95 to-transparent z-10 flex items-center justify-between pointer-events-none">
+<div class="flex items-center gap-3">
+<div class="px-2 py-0.5 rounded bg-[#1E293B] text-[#38BDF8] font-code-sm text-code-sm flex items-center gap-1.5 pointer-events-auto">
+<span class="w-1.5 h-1.5 rounded-full bg-[#38BDF8] animate-ping"></span>
+            ETU COLOMBO FL-01 ARCH-TWIN
+          </div>
+<span class="font-telemetry-data text-telemetry-data text-[#94A3B8]">Grid 0.5m Precision • Active Track: 42 Patients</span>
+</div>
+<div class="flex items-center gap-2 pointer-events-auto">
+<span class="px-2 py-0.5 rounded bg-error/20 text-[#FCA5A5] font-code-sm text-code-sm">Resus Bay: 8/10 Saturated</span>
+<span class="px-2 py-0.5 rounded bg-[#0D9488]/20 text-secondary-fixed font-code-sm text-code-sm">Ambulance ETA: 4m (Bay 2)</span>
+</div>
+</div>
+<!-- Interactive SVG Architectural Floorplan -->
+<div class="relative w-full aspect-[16/10] bg-[#070D1E] overflow-hidden cursor-crosshair" id="floorplan-container">
+<svg class="w-full h-full select-none transition-transform duration-300" id="etu-svg" viewbox="0 0 1000 620">
+<defs>
+<!-- Grid pattern -->
+<pattern height="20" id="floor-grid" patternunits="userSpaceOnUse" width="20">
+<path d="M 20 0 L 0 0 0 20" fill="none" opacity="0.6" stroke="#1E293B" stroke-width="0.5"></path>
+</pattern>
+<!-- Flow Arrow Marker -->
+<marker id="arrowhead-red" markerheight="4" markerwidth="6" orient="auto" refx="5" refy="2">
+<polygon fill="#DC2626" points="0 0, 6 2, 0 4"></polygon>
+</marker>
+<marker id="arrowhead-teal" markerheight="4" markerwidth="6" orient="auto" refx="5" refy="2">
+<polygon fill="#0D9488" points="0 0, 6 2, 0 4"></polygon>
+</marker>
+<!-- Gradients -->
+<radialgradient cx="50%" cy="50%" id="heat-resus" r="50%">
+<stop offset="0%" stop-color="#DC2626" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#DC2626" stop-opacity="0"></stop>
+</radialgradient>
+<radialgradient cx="50%" cy="50%" id="heat-triage" r="50%">
+<stop offset="0%" stop-color="#F59E0B" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#F59E0B" stop-opacity="0"></stop>
+</radialgradient>
+</defs>
+<!-- Grid Background -->
+<rect fill="#070D1E" height="620" width="1000"></rect>
+<rect fill="url(#floor-grid)" height="620" width="1000"></rect>
+<!-- Heatmap Overlay Layer (toggled via JS) -->
+<g class="transition-opacity duration-300" id="heatmap-layer" opacity="0.8">
+<circle cx="210" cy="180" fill="url(#heat-resus)" r="140"></circle>
+<circle cx="810" cy="150" fill="url(#heat-triage)" r="130"></circle>
+<circle cx="500" cy="420" fill="url(#heat-triage)" r="150"></circle>
+</g>
+<!-- External Entrance / Ambulance Bay -->
+<g id="ambulance-dock">
+<rect fill="#111C35" height="70" rx="4" stroke="#334155" stroke-dasharray="4" width="220" x="750" y="20"></rect>
+<text fill="#38BDF8" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="860" y="45">AMBULANCE BAY ENTRANCE</text>
+<text fill="#94A3B8" font-family="Inter" font-size="10" text-anchor="middle" x="860" y="65">Bay 1: Empty • Bay 2: Incoming (4m)</text>
+</g>
+<!-- Zone 2: Triage Assessment & Waiting (Top Right) -->
+<g id="zone-triage">
+<rect fill="#0E1933" height="200" rx="4" stroke="#2A3859" stroke-width="1.5" width="240" x="730" y="110"></rect>
+<text fill="#F8FAFC" font-family="Inter" font-size="12" font-weight="600" x="745" y="132">ZONE 2: TRIAGE & ASSESSMENT</text>
+<text fill="#F59E0B" font-family="JetBrains Mono" font-size="10" x="745" y="147">WAIT QUEUE: 8 PATIENTS (AVG 14m)</text>
+<!-- Assessment Cubicles T1 to T4 -->
+<g class="cubicles" transform="translate(745, 160)">
+<!-- T1 -->
+<rect fill="#172545" height="40" rx="2" stroke="#F59E0B" stroke-width="1" width="48" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="24" y="24">T-1</text>
+<!-- T2 -->
+<rect fill="#172545" height="40" rx="2" stroke="#DC2626" stroke-width="1" width="48" x="55" y="0"></rect>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="79" y="24">T-2</text>
+<!-- T3 -->
+<rect fill="#172545" height="40" rx="2" stroke="#0D9488" stroke-width="1" width="48" x="110" y="0"></rect>
+<text fill="#5EEAD4" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="134" y="24">T-3</text>
+<!-- T4 -->
+<rect fill="#172545" height="40" rx="2" stroke="#0D9488" stroke-width="1" width="48" x="165" y="0"></rect>
+<text fill="#5EEAD4" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="189" y="24">T-4</text>
+</g>
+<!-- Waiting area seating dots -->
+<g transform="translate(755, 230)">
+<text fill="#64748B" font-family="Inter" font-size="10" x="0" y="-5">Waiting Chairs (Triage Priority L3/L4)</text>
+<circle cx="10" cy="15" fill="#DC2626" r="5"></circle>
+<circle cx="35" cy="15" fill="#F59E0B" r="5"></circle>
+<circle cx="60" cy="15" fill="#F59E0B" r="5"></circle>
+<circle cx="85" cy="15" fill="#0D9488" r="5"></circle>
+<circle cx="110" cy="15" fill="#0D9488" r="5"></circle>
+<circle cx="135" cy="15" fill="#0D9488" r="5"></circle>
+<circle cx="160" cy="15" fill="#0D9488" r="5"></circle>
+<circle cx="185" cy="15" fill="#64748B" r="5"></circle>
+</g>
+</g>
+<!-- Zone 1: Resuscitation Bay (Top Left, Red Zone) -->
+<g id="zone-resus">
+<rect fill="#161226" height="260" rx="6" stroke="#991B1B" stroke-width="1.5" width="450" x="30" y="30"></rect>
+<text fill="#F8FAFC" font-family="Inter" font-size="14" font-weight="700" x="45" y="55">ZONE 1: RESUSCITATION BAY (RED ZONE)</text>
+<text fill="#F87171" font-family="JetBrains Mono" font-size="11" x="45" y="70">CRITICAL CARE • 10 ACTIVE RESUS STATIONS (OCCUPIED: 8/10)</text>
+<!-- 10 Beds layout (R1 - R5 top, R6 - R10 bottom) -->
+<!-- Row 1: R1 to R5 -->
+<g transform="translate(45, 85)">
+<!-- R1 Occupied -->
+<g class="bed-item cursor-pointer" onclick="selectBed('R-01', 'Occupied', '#NHSL-ETU-8910', 'Cat 1 - Massive GI Bleed', '92% O2 / Pulse 118', 'Dr. Alwis', '1h 10m')">
+<rect class="hover:stroke-white transition-colors" fill="#1C182B" height="75" rx="4" stroke="#DC2626" stroke-width="1.2" width="70" x="0" y="0"></rect>
+<rect fill="#DC2626" height="15" opacity="0.3" rx="2" width="30" x="6" y="6"></rect>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="10" font-weight="600" x="10" y="18">R-01</text>
+<circle class="animate-pulse" cx="56" cy="14" fill="#DC2626" r="4"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="42">HR: 118</text>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="54">SpO2: 92%</text>
+<text fill="#F87171" font-family="Inter" font-size="8" x="8" y="66">VENT ON</text>
+</g>
+<!-- R2 Occupied -->
+<g class="bed-item cursor-pointer" onclick="selectBed('R-02', 'Occupied', '#NHSL-ETU-8915', 'Cat 1 - Acute STEMI', '98% O2 / Pulse 90', 'Dr. Perera', '2h 10m')" transform="translate(80, 0)">
+<rect class="hover:stroke-white transition-colors" fill="#1C182B" height="75" rx="4" stroke="#DC2626" stroke-width="1.2" width="70" x="0" y="0"></rect>
+<rect fill="#DC2626" height="15" opacity="0.3" rx="2" width="30" x="6" y="6"></rect>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="10" font-weight="600" x="10" y="18">R-02</text>
+<circle cx="56" cy="14" fill="#DC2626" r="4"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="42">HR: 90</text>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="54">SpO2: 98%</text>
+<text fill="#F87171" font-family="Inter" font-size="8" x="8" y="66">MONITORED</text>
+</g>
+<!-- R3 (Selected by default) -->
+<g class="bed-item cursor-pointer" id="bed-r3-svg" onclick="selectBed('R-03', 'Occupied', '#NHSL-ETU-8921', 'Cat 1 - Severe Acute Resp. Distress', '94% O2 / Pulse 108', 'Dr. M. Perera', '1h 45m')" transform="translate(160, 0)">
+<rect class="shadow-lg" fill="#2E1B28" height="75" rx="4" stroke="#38BDF8" stroke-width="2" width="70" x="0" y="0"></rect>
+<rect fill="#DC2626" height="15" opacity="0.6" rx="2" width="30" x="6" y="6"></rect>
+<text fill="#FFFFFF" font-family="JetBrains Mono" font-size="10" font-weight="700" x="10" y="18">R-03</text>
+<circle class="animate-ping" cx="56" cy="14" fill="#DC2626" r="5"></circle>
+<circle cx="56" cy="14" fill="#DC2626" r="3"></circle>
+<text fill="#38BDF8" font-family="JetBrains Mono" font-size="9" font-weight="600" x="8" y="42">HR: 108</text>
+<text fill="#38BDF8" font-family="JetBrains Mono" font-size="9" font-weight="600" x="8" y="54">SpO2: 94%</text>
+<text fill="#FCA5A5" font-family="Inter" font-size="8" x="8" y="66">HIGH-FLOW O2</text>
+</g>
+<!-- R4 Occupied -->
+<g class="bed-item cursor-pointer" onclick="selectBed('R-04', 'Occupied', '#NHSL-ETU-8924', 'Cat 1 - Septic Shock', '89% O2 / Pulse 124', 'Dr. K. Wickramasinghe', '40m')" transform="translate(240, 0)">
+<rect class="hover:stroke-white transition-colors" fill="#1C182B" height="75" rx="4" stroke="#DC2626" stroke-width="1.2" width="70" x="0" y="0"></rect>
+<rect fill="#DC2626" height="15" opacity="0.3" rx="2" width="30" x="6" y="6"></rect>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="10" font-weight="600" x="10" y="18">R-04</text>
+<circle cx="56" cy="14" fill="#DC2626" r="4"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="42">HR: 124</text>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="54">SpO2: 89%</text>
+<text fill="#F87171" font-family="Inter" font-size="8" x="8" y="66">VASOPRESSOR</text>
+</g>
+<!-- R5 AVAILABLE (Glowing Teal) -->
+<g class="bed-item cursor-pointer" onclick="selectBed('R-05', 'Available', 'None', 'Ready for Rapid Triage', 'Clean / Ready', 'Charge Nurse', '0m')" transform="translate(320, 0)">
+<rect class="hover:stroke-white transition-colors" fill="#0D2E2B" height="75" rx="4" stroke="#0D9488" stroke-width="1.8" width="70" x="0" y="0"></rect>
+<rect fill="#0D9488" height="15" opacity="0.4" rx="2" width="30" x="6" y="6"></rect>
+<text fill="#5EEAD4" font-family="JetBrains Mono" font-size="10" font-weight="600" x="10" y="18">R-05</text>
+<circle cx="56" cy="14" fill="#10B981" r="4"></circle>
+<text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="42">VACANT</text>
+<text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="54">READY</text>
+<text fill="#34D399" font-family="Inter" font-size="8" x="8" y="66">O2 CHECKED</text>
+</g>
+</g>
+<!-- Row 2: R6 to R10 -->
+<g transform="translate(45, 170)">
+<!-- R6 Occupied -->
+<g class="bed-item cursor-pointer" onclick="selectBed('R-06', 'Occupied', '#NHSL-ETU-8930', 'Cat 1 - Severe Polytrauma', '95% O2 / Pulse 110', 'Dr. Alwis', '55m')" transform="translate(0, 0)">
+<rect class="hover:stroke-white transition-colors" fill="#1C182B" height="75" rx="4" stroke="#DC2626" stroke-width="1.2" width="70" x="0" y="0"></rect>
+<rect fill="#DC2626" height="15" opacity="0.3" rx="2" width="30" x="6" y="6"></rect>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="10" font-weight="600" x="10" y="18">R-06</text>
+<circle cx="56" cy="14" fill="#DC2626" r="4"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="42">HR: 110</text>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="54">SpO2: 95%</text>
+<text fill="#F87171" font-family="Inter" font-size="8" x="8" y="66">TRAUMA PACK</text>
+</g>
+<!-- R7 Occupied -->
+<g class="bed-item cursor-pointer" onclick="selectBed('R-07', 'Occupied', '#NHSL-ETU-8933', 'Cat 1 - Anaphylaxis', '97% O2 / Pulse 96', 'Dr. Perera', '30m')" transform="translate(80, 0)">
+<rect class="hover:stroke-white transition-colors" fill="#1C182B" height="75" rx="4" stroke="#DC2626" stroke-width="1.2" width="70" x="0" y="0"></rect>
+<rect fill="#DC2626" height="15" opacity="0.3" rx="2" width="30" x="6" y="6"></rect>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="10" font-weight="600" x="10" y="18">R-07</text>
+<circle cx="56" cy="14" fill="#DC2626" r="4"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="42">HR: 96</text>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="54">SpO2: 97%</text>
+<text fill="#F87171" font-family="Inter" font-size="8" x="8" y="66">EPI INFUSION</text>
+</g>
+<!-- R8 Occupied -->
+<g class="bed-item cursor-pointer" onclick="selectBed('R-08', 'Occupied', '#NHSL-ETU-8937', 'Cat 1 - Status Epilepticus', '94% O2 / Pulse 102', 'Dr. Wickramasinghe', '1h 05m')" transform="translate(160, 0)">
+<rect class="hover:stroke-white transition-colors" fill="#1C182B" height="75" rx="4" stroke="#DC2626" stroke-width="1.2" width="70" x="0" y="0"></rect>
+<rect fill="#DC2626" height="15" opacity="0.3" rx="2" width="30" x="6" y="6"></rect>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="10" font-weight="600" x="10" y="18">R-08</text>
+<circle cx="56" cy="14" fill="#DC2626" r="4"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="42">HR: 102</text>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="54">SpO2: 94%</text>
+<text fill="#F87171" font-family="Inter" font-size="8" x="8" y="66">SEDATED</text>
+</g>
+<!-- R9 Occupied -->
+<g class="bed-item cursor-pointer" onclick="selectBed('R-09', 'Occupied', '#NHSL-ETU-8941', 'Cat 1 - Cardiac Arrest (ROSC)', '91% O2 / Pulse 76', 'Dr. Alwis', '1h 50m')" transform="translate(240, 0)">
+<rect class="hover:stroke-white transition-colors" fill="#1C182B" height="75" rx="4" stroke="#DC2626" stroke-width="1.2" width="70" x="0" y="0"></rect>
+<rect fill="#DC2626" height="15" opacity="0.3" rx="2" width="30" x="6" y="6"></rect>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="10" font-weight="600" x="10" y="18">R-09</text>
+<circle cx="56" cy="14" fill="#DC2626" r="4"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="42">HR: 76</text>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" x="8" y="54">SpO2: 91%</text>
+<text fill="#F87171" font-family="Inter" font-size="8" x="8" y="66">POST-ROSC</text>
+</g>
+<!-- R10 AVAILABLE (Glowing Teal) -->
+<g class="bed-item cursor-pointer" onclick="selectBed('R-10', 'Available', 'None', 'Ready for Rapid Triage', 'Clean / Ready', 'Charge Nurse', '0m')" transform="translate(320, 0)">
+<rect class="hover:stroke-white transition-colors" fill="#0D2E2B" height="75" rx="4" stroke="#0D9488" stroke-width="1.8" width="70" x="0" y="0"></rect>
+<rect fill="#0D9488" height="15" opacity="0.4" rx="2" width="30" x="6" y="6"></rect>
+<text fill="#5EEAD4" font-family="JetBrains Mono" font-size="10" font-weight="600" x="10" y="18">R-10</text>
+<circle cx="56" cy="14" fill="#10B981" r="4"></circle>
+<text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="42">VACANT</text>
+<text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="54">READY</text>
+<text fill="#34D399" font-family="Inter" font-size="8" x="8" y="66">VENT STANDBY</text>
+</g>
+</g>
+</g>
+<!-- Zone 6: Central Nursing Island & AI Console -->
+<g id="zone-nursing-island" transform="translate(505, 110)">
+<polygon fill="#13233F" points="0,30 50,0 160,0 210,30 180,95 30,95" stroke="#38BDF8" stroke-width="1.5"></polygon>
+<text fill="#38BDF8" font-family="JetBrains Mono" font-size="11" font-weight="700" text-anchor="middle" x="105" y="45">CENTRAL COMMAND</text>
+<text fill="#94A3B8" font-family="Inter" font-size="9" text-anchor="middle" x="105" y="62">NURSING & AI TELEMETRY CONSOLE</text>
+<circle cx="80" cy="78" fill="#0284C7" r="6"></circle>
+<circle cx="105" cy="78" fill="#0284C7" r="6"></circle>
+<circle cx="130" cy="78" fill="#0D9488" r="6"></circle>
+</g>
+<!-- Zone 7: Equipment & Crash Cart Depot (Between Resus and Yellow) -->
+<g id="zone-equipment" transform="translate(30, 305)">
+<rect fill="#111B2E" height="90" rx="4" stroke="#334155" stroke-dasharray="3" width="160" x="0" y="0"></rect>
+<text fill="#94A3B8" font-family="JetBrains Mono" font-size="10" font-weight="600" x="12" y="20">EQUIPMENT & CRASH CARTS</text>
+<g transform="translate(12, 30)">
+<rect fill="#1E293B" height="24" rx="2" stroke="#0D9488" width="30" x="0" y="0"></rect>
+<text fill="#5EEAD4" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="15" y="15">CART 1</text>
+<rect fill="#1E293B" height="24" rx="2" stroke="#0D9488" width="30" x="36" y="0"></rect>
+<text fill="#5EEAD4" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="51" y="15">CART 2</text>
+<rect fill="#1E293B" height="24" rx="2" stroke="#0D9488" width="30" x="72" y="0"></rect>
+<text fill="#5EEAD4" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="87" y="15">USOUND</text>
+<rect fill="#1E293B" height="24" rx="2" stroke="#F59E0B" width="30" x="108" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="123" y="15">VENT 4*</text>
+</g>
+<text fill="#64748B" font-family="Inter" font-size="9" x="12" y="75">*Vent 4 charging (84%) • Ready in 12m</text>
+</g>
+<!-- Zone 5: Short-Stay Clinical Observation Unit (6 Beds O1 - O6) -->
+<g id="zone-observation" transform="translate(30, 410)">
+<rect fill="#1C182B" height="190" rx="4" stroke="#7C3AED" stroke-width="1.2" width="160" x="0" y="0"></rect>
+<text fill="#C4B5FD" font-family="JetBrains Mono" font-size="11" font-weight="600" x="10" y="22">ZONE 5: OBS UNIT</text>
+<text fill="#DDD6FE" font-family="Inter" font-size="9" x="10" y="36">6 Beds • 100% Saturated</text>
+<g transform="translate(10, 48)">
+<!-- O1 to O6 Mini Bed blocks -->
+<g onclick="selectBed('O-01', 'Occupied', '#NHSL-ETU-8799', 'Post-Op Monitoring', '98% O2 / Pulse 74', 'Dr. Jayaweera', '4h 15m')">
+<rect class="cursor-pointer hover:stroke-white" fill="#2E1065" height="38" rx="2" stroke="#A78BFA" width="65" x="0" y="0"></rect>
+<text fill="#DDD6FE" font-family="JetBrains Mono" font-size="9" x="6" y="16">O-1 (4h)</text>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="8" x="6" y="30">Disc 15:10</text>
+</g>
+<g onclick="selectBed('O-02', 'Occupied', '#NHSL-ETU-8802', 'Chest Pain Protocol', '99% O2 / Pulse 68', 'Dr. Jayaweera', '5h 00m')" transform="translate(75, 0)">
+<rect class="cursor-pointer hover:stroke-white" fill="#2E1065" height="38" rx="2" stroke="#A78BFA" width="65" x="0" y="0"></rect>
+<text fill="#DDD6FE" font-family="JetBrains Mono" font-size="9" x="6" y="16">O-2 (5h)</text>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="8" x="6" y="30">Disc 15:45</text>
+</g>
+<g onclick="selectBed('O-03', 'Occupied', '#NHSL-ETU-8815', 'Mild Head Injury', '99% O2 / Pulse 72', 'Dr. Jayaweera', '3h 30m')" transform="translate(0, 45)">
+<rect class="cursor-pointer hover:stroke-white" fill="#2E1065" height="38" rx="2" stroke="#A78BFA" width="65" x="0" y="0"></rect>
+<text fill="#DDD6FE" font-family="JetBrains Mono" font-size="9" x="6" y="16">O-3 (3h)</text>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="8" x="6" y="30">Scan Pending</text>
+</g>
+<g onclick="selectBed('O-04', 'Occupied', '#NHSL-ETU-8822', 'Syncope Investigation', '98% O2 / Pulse 70', 'Dr. Jayaweera', '2h 50m')" transform="translate(75, 45)">
+<rect class="cursor-pointer hover:stroke-white" fill="#2E1065" height="38" rx="2" stroke="#A78BFA" width="65" x="0" y="0"></rect>
+<text fill="#DDD6FE" font-family="JetBrains Mono" font-size="9" x="6" y="16">O-4 (2h)</text>
+<text fill="#A7F3D0" font-family="JetBrains Mono" font-size="8" x="6" y="30">Disc 16:00</text>
+</g>
+<g onclick="selectBed('O-05', 'Occupied', '#NHSL-ETU-8830', 'Post-Dialysis Hypotension', '96% O2 / Pulse 88', 'Dr. Jayaweera', '3h 10m')" transform="translate(0, 90)">
+<rect class="cursor-pointer hover:stroke-white" fill="#2E1065" height="38" rx="2" stroke="#A78BFA" width="65" x="0" y="0"></rect>
+<text fill="#DDD6FE" font-family="JetBrains Mono" font-size="9" x="6" y="16">O-5 (3h)</text>
+<text fill="#FCA5A5" font-family="JetBrains Mono" font-size="8" x="6" y="30">Hold ICU</text>
+</g>
+<g onclick="selectBed('O-06', 'Occupied', '#NHSL-ETU-8834', 'DKA Stabilization', '97% O2 / Pulse 82', 'Dr. Jayaweera', '4h 40m')" transform="translate(75, 90)">
+<rect class="cursor-pointer hover:stroke-white" fill="#2E1065" height="38" rx="2" stroke="#A78BFA" width="65" x="0" y="0"></rect>
+<text fill="#DDD6FE" font-family="JetBrains Mono" font-size="9" x="6" y="16">O-6 (4h)</text>
+<text fill="#A7F3D0" font-family="JetBrains Mono" font-size="8" x="6" y="30">Disc 15:20</text>
+</g>
+</g>
+</g>
+<!-- Zone 3: Acute / Intermediate Treatment (Yellow Zone - 20 Beds) -->
+<g id="zone-acute" transform="translate(210, 320)">
+<rect fill="#1A1C16" height="280" rx="6" stroke="#D97706" stroke-width="1.5" width="500" x="0" y="0"></rect>
+<text fill="#F8FAFC" font-family="Inter" font-size="13" font-weight="700" x="15" y="24">ZONE 3: ACUTE / INTERMEDIATE (YELLOW ZONE)</text>
+<text fill="#FBBF24" font-family="JetBrains Mono" font-size="10" x="15" y="40">20 BEDS • ACTIVE CAPACITY 18/20 (90% OCCUPIED)</text>
+<!-- Dual-row pods (Y1 to Y10 top row, Y11 to Y20 bottom row) -->
+<!-- Row 1: Y1 - Y10 (rendered compactly) -->
+<g transform="translate(15, 55)">
+<!-- Render 10 beds -->
+<!-- Y1-Y5 -->
+<g class="cursor-pointer" onclick="selectBed('Y-01', 'Occupied', '#NHSL-ETU-8950', 'Cat 2 - Acute Appendicitis', '98% O2 / Pulse 92', 'Dr. Senanayake', '2h 10m')">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-01</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">92bpm</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-02', 'Occupied', '#NHSL-ETU-8951', 'Cat 2 - Acute Cholecystitis', '97% O2 / Pulse 88', 'Dr. Senanayake', '1h 30m')" transform="translate(47, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-02</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">88bpm</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-03', 'Available', 'None', 'Turnover Cleared', 'Standby', 'Nurse Desk', '0m')" transform="translate(94, 0)">
+<rect class="hover:stroke-white" fill="#0D2E2B" height="65" rx="3" stroke="#0D9488" width="42" x="0" y="0"></rect>
+<text fill="#5EEAD4" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-03</text>
+<circle cx="34" cy="12" fill="#10B981" r="3"></circle>
+<text fill="#A7F3D0" font-family="JetBrains Mono" font-size="8" x="5" y="40">VAC</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-04', 'Occupied', '#NHSL-ETU-8953', 'Cat 2 - Renal Colic', '99% O2 / Pulse 104', 'Dr. Senanayake', '1h 10m')" transform="translate(141, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-04</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">104b</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-05', 'Occupied', '#NHSL-ETU-8955', 'Cat 2 - Asthma Moderate Exacerbation', '95% O2 / Pulse 98', 'Dr. Senanayake', '45m')" transform="translate(188, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-05</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">NEB ON</text>
+</g>
+<!-- Y6-Y10 -->
+<g class="cursor-pointer" onclick="selectBed('Y-06', 'Occupied', '#NHSL-ETU-8956', 'Cat 2 - Uncontrolled Hypertension', '98% O2 / Pulse 82', 'Dr. Fernando', '3h 05m')" transform="translate(235, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-06</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">82bpm</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-07', 'Occupied', '#NHSL-ETU-8957', 'Cat 2 - Cellulitis / Fever', '96% O2 / Pulse 90', 'Dr. Fernando', '2h 25m')" transform="translate(282, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-07</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">90bpm</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-08', 'Occupied', '#NHSL-ETU-8959', 'Cat 2 - Upper GI Discomfort', '99% O2 / Pulse 75', 'Dr. Fernando', '1h 55m')" transform="translate(329, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-08</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">75bpm</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-09', 'Available', 'None', 'Sanitized Bed', 'Ready', 'Nurse Desk', '0m')" transform="translate(376, 0)">
+<rect class="hover:stroke-white" fill="#0D2E2B" height="65" rx="3" stroke="#0D9488" width="42" x="0" y="0"></rect>
+<text fill="#5EEAD4" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-09</text>
+<circle cx="34" cy="12" fill="#10B981" r="3"></circle>
+<text fill="#A7F3D0" font-family="JetBrains Mono" font-size="8" x="5" y="40">VAC</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-10', 'Occupied', '#NHSL-ETU-8962', 'Cat 2 - Acute Delirium', '97% O2 / Pulse 86', 'Dr. Fernando', '50m')" transform="translate(423, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-10</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">86bpm</text>
+</g>
+</g>
+<!-- Row 2: Y11 - Y20 -->
+<g transform="translate(15, 135)">
+<g class="cursor-pointer" onclick="selectBed('Y-11', 'Occupied', '#NHSL-ETU-8964', 'Cat 2 - Suspected Dengue Shock Phase', '96% O2 / Pulse 112', 'Dr. Gunaratne', '2h 00m')">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-11</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">IV DRIP</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-12', 'Occupied', '#NHSL-ETU-8965', 'Cat 2 - Acute Pancreatitis', '98% O2 / Pulse 94', 'Dr. Gunaratne', '3h 15m')" transform="translate(47, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-12</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">94bpm</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-13', 'Occupied', '#NHSL-ETU-8967', 'Cat 2 - Diabetic Foot Infection', '97% O2 / Pulse 80', 'Dr. Gunaratne', '1h 40m')" transform="translate(94, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-13</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">80bpm</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-14', 'Occupied', '#NHSL-ETU-8969', 'Cat 2 - Syncope in Elderly', '99% O2 / Pulse 64', 'Dr. Gunaratne', '2h 45m')" transform="translate(141, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-14</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">64bpm</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-15', 'Occupied', '#NHSL-ETU-8971', 'Cat 2 - Acute Pyelonephritis', '98% O2 / Pulse 90', 'Dr. Senanayake', '1h 15m')" transform="translate(188, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-15</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">90bpm</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-16', 'Occupied', '#NHSL-ETU-8973', 'Cat 2 - Fractured Femur prep', '99% O2 / Pulse 92', 'Dr. Senanayake', '3h 30m')" transform="translate(235, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-16</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">TRACTION</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-17', 'Occupied', '#NHSL-ETU-8974', 'Cat 2 - Stroke Fast-Track', '96% O2 / Pulse 84', 'Dr. Senanayake', '50m')" transform="translate(282, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-17</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">CT READY</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-18', 'Occupied', '#NHSL-ETU-8976', 'Cat 2 - Electrolyte Derangement', '98% O2 / Pulse 76', 'Dr. Fernando', '2h 10m')" transform="translate(329, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-18</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">K+ INF</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-19', 'Occupied', '#NHSL-ETU-8979', 'Cat 2 - Hematemesis (Stable)', '97% O2 / Pulse 88', 'Dr. Fernando', '1h 05m')" transform="translate(376, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-19</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">88bpm</text>
+</g>
+<g class="cursor-pointer" onclick="selectBed('Y-20', 'Occupied', '#NHSL-ETU-8982', 'Cat 2 - Unstable Angina', '99% O2 / Pulse 78', 'Dr. Fernando', '4h 00m')" transform="translate(423, 0)">
+<rect class="hover:stroke-white" fill="#262315" height="65" rx="3" stroke="#F59E0B" width="42" x="0" y="0"></rect>
+<text fill="#FDE68A" font-family="JetBrains Mono" font-size="9" x="5" y="16">Y-20</text>
+<circle cx="34" cy="12" fill="#F59E0B" r="3"></circle>
+<text fill="#E2E8F0" font-family="JetBrains Mono" font-size="8" x="5" y="40">78bpm</text>
+</g>
+</g>
+<text fill="#64748B" font-family="Inter" font-size="9" x="15" y="225">Central nursing sightline clear • O2 line continuous at 4.2 Bar • Direct corridor to Ward Transfer Lift A</text>
+</g>
+<!-- Zone 4: Ambulatory Care (Green Zone - 12 Recliners/Beds) -->
+<g id="zone-ambulatory" transform="translate(730, 330)">
+<rect fill="#0F2422" height="270" rx="4" stroke="#0D9488" stroke-width="1.2" width="240" x="0" y="0"></rect>
+<text fill="#A7F3D0" font-family="Inter" font-size="12" font-weight="600" x="12" y="24">ZONE 4: AMBULATORY CARE</text>
+<text fill="#5EEAD4" font-family="JetBrains Mono" font-size="10" x="12" y="38">12 RECLINERS • 10 OCCUPIED (83%)</text>
+<!-- Recliner Icons Grid 3x4 -->
+<g transform="translate(12, 50)">
+<!-- Row 1 -->
+<g class="cursor-pointer" onclick="selectBed('G-01', 'Occupied', '#NHSL-ETU-9001', 'Cat 3 - Laceration suturing', 'Pulse 78', 'Dr. Cooray', '35m')"><rect fill="#133D39" height="42" rx="2" stroke="#0D9488" width="48" x="0" y="0"></rect><text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-01</text><circle cx="38" cy="12" fill="#10B981" r="3"></circle></g>
+<g class="cursor-pointer" onclick="selectBed('G-02', 'Occupied', '#NHSL-ETU-9002', 'Cat 3 - Minor Burn dressing', 'Pulse 82', 'Dr. Cooray', '20m')" transform="translate(56, 0)"><rect fill="#133D39" height="42" rx="2" stroke="#0D9488" width="48" x="0" y="0"></rect><text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-02</text><circle cx="38" cy="12" fill="#10B981" r="3"></circle></g>
+<g class="cursor-pointer" onclick="selectBed('G-03', 'Occupied', '#NHSL-ETU-9003', 'Cat 3 - Foreign body eye', 'Pulse 70', 'Dr. Cooray', '45m')" transform="translate(112, 0)"><rect fill="#133D39" height="42" rx="2" stroke="#0D9488" width="48" x="0" y="0"></rect><text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-03</text><circle cx="38" cy="12" fill="#10B981" r="3"></circle></g>
+<g class="cursor-pointer" onclick="selectBed('G-04', 'Available', 'None', 'Sanitized Recliner', 'Ready', 'Nurse Station', '0m')" transform="translate(168, 0)"><rect fill="#0D2E2B" height="42" rx="2" stroke="#34D399" width="48" x="0" y="0"></rect><text fill="#34D399" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-04</text><circle cx="38" cy="12" fill="#34D399" r="3"></circle></g>
+<!-- Row 2 -->
+<g class="cursor-pointer" onclick="selectBed('G-05', 'Occupied', '#NHSL-ETU-9005', 'Cat 3 - Mild Allergic Reaction', 'Pulse 84', 'Dr. Cooray', '15m')" transform="translate(0, 52)"><rect fill="#133D39" height="42" rx="2" stroke="#0D9488" width="48" x="0" y="0"></rect><text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-05</text><circle cx="38" cy="12" fill="#10B981" r="3"></circle></g>
+<g class="cursor-pointer" onclick="selectBed('G-06', 'Occupied', '#NHSL-ETU-9006', 'Cat 3 - Ankle Sprain splinting', 'Pulse 74', 'Dr. Cooray', '1h 00m')" transform="translate(56, 52)"><rect fill="#133D39" height="42" rx="2" stroke="#0D9488" width="48" x="0" y="0"></rect><text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-06</text><circle cx="38" cy="12" fill="#10B981" r="3"></circle></g>
+<g class="cursor-pointer" onclick="selectBed('G-07', 'Occupied', '#NHSL-ETU-9007', 'Cat 3 - Acute Otitis pain', 'Pulse 76', 'Dr. Cooray', '25m')" transform="translate(112, 52)"><rect fill="#133D39" height="42" rx="2" stroke="#0D9488" width="48" x="0" y="0"></rect><text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-07</text><circle cx="38" cy="12" fill="#10B981" r="3"></circle></g>
+<g class="cursor-pointer" onclick="selectBed('G-08', 'Occupied', '#NHSL-ETU-9008', 'Cat 3 - Simple Fracture Colles', 'Pulse 80', 'Dr. Cooray', '50m')" transform="translate(168, 52)"><rect fill="#133D39" height="42" rx="2" stroke="#0D9488" width="48" x="0" y="0"></rect><text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-08</text><circle cx="38" cy="12" fill="#10B981" r="3"></circle></g>
+<!-- Row 3 -->
+<g class="cursor-pointer" onclick="selectBed('G-09', 'Occupied', '#NHSL-ETU-9009', 'Cat 3 - Epistaxis packed', 'Pulse 78', 'Dr. Cooray', '30m')" transform="translate(0, 104)"><rect fill="#133D39" height="42" rx="2" stroke="#0D9488" width="48" x="0" y="0"></rect><text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-09</text><circle cx="38" cy="12" fill="#10B981" r="3"></circle></g>
+<g class="cursor-pointer" onclick="selectBed('G-10', 'Occupied', '#NHSL-ETU-9010', 'Cat 3 - Gastroenteritis rehydration', 'Pulse 88', 'Dr. Cooray', '1h 10m')" transform="translate(56, 104)"><rect fill="#133D39" height="42" rx="2" stroke="#0D9488" width="48" x="0" y="0"></rect><text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-10</text><circle cx="38" cy="12" fill="#10B981" r="3"></circle></g>
+<g class="cursor-pointer" onclick="selectBed('G-11', 'Available', 'None', 'Sanitized Recliner', 'Ready', 'Nurse Station', '0m')" transform="translate(112, 104)"><rect fill="#0D2E2B" height="42" rx="2" stroke="#34D399" width="48" x="0" y="0"></rect><text fill="#34D399" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-11</text><circle cx="38" cy="12" fill="#34D399" r="3"></circle></g>
+<g class="cursor-pointer" onclick="selectBed('G-12', 'Occupied', '#NHSL-ETU-9012', 'Cat 3 - Rabies PEP & Dressing', 'Pulse 72', 'Dr. Cooray', '15m')" transform="translate(168, 104)"><rect fill="#133D39" height="42" rx="2" stroke="#0D9488" width="48" x="0" y="0"></rect><text fill="#A7F3D0" font-family="JetBrains Mono" font-size="9" x="8" y="18">G-12</text><circle cx="38" cy="12" fill="#10B981" r="3"></circle></g>
+</g>
+</g>
+<!-- Zone 8: Elevators / Inter-ward Decant Tunnel (Top center) -->
+<g id="zone-elevators" transform="translate(490, 20)">
+<rect fill="#111A30" height="60" rx="3" stroke="#38BDF8" stroke-dasharray="4" width="220" x="0" y="0"></rect>
+<text fill="#38BDF8" font-family="JetBrains Mono" font-size="10" font-weight="600" text-anchor="middle" x="110" y="24">WARD 12 / ICU TRANSFER LIFTS</text>
+<text fill="#94A3B8" font-family="Inter" font-size="9" text-anchor="middle" x="110" y="42">Lift A: Standing (ETU Priority) • Lift B: Active</text>
+</g>
+<!-- Animated Patient Flow Pathways -->
+<g id="patient-flows" opacity="0.85">
+<!-- Ambulance to Resus Path -->
+<path class="animate-pulse" d="M 750,55 L 480,55" fill="none" marker-end="url(#arrowhead-red)" stroke="#DC2626" stroke-dasharray="8 4" stroke-width="2.5"></path>
+<!-- Triage to Acute Yellow Zone Path -->
+<path d="M 730,190 L 610,190 L 610,320" fill="none" marker-end="url(#arrowhead-teal)" stroke="#0D9488" stroke-dasharray="6 3" stroke-width="2"></path>
+<!-- Acute to Elevators (Decant Path) -->
+<path d="M 450,320 L 450,180 L 530,180 L 530,80" fill="none" stroke="#38BDF8" stroke-dasharray="5 3" stroke-width="2"></path>
+</g>
+<!-- Staff Location Vector Dots (Toggled in staff layer) -->
+<g id="staff-layer" opacity="0.9">
+<!-- Doctor positions -->
+<circle cx="210" cy="130" fill="#38BDF8" r="5" stroke="#FFFFFF" stroke-width="1.5"><title>Dr. M. Perera (Resus Bay Lead)</title></circle>
+<text fill="#38BDF8" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="210" y="120">DR. PERERA</text>
+<circle cx="440" cy="380" fill="#38BDF8" r="5" stroke="#FFFFFF" stroke-width="1.5"><title>Dr. Senanayake (Acute Lead)</title></circle>
+<text fill="#38BDF8" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="440" y="370">DR. SENANAYAKE</text>
+<circle cx="810" cy="180" fill="#38BDF8" r="5" stroke="#FFFFFF" stroke-width="1.5"><title>Dr. Cooray (Triage Officer)</title></circle>
+<text fill="#38BDF8" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="810" y="170">DR. COORAY</text>
+<!-- Nurse vectors -->
+<circle cx="270" cy="140" fill="#0D9488" r="4"><title>Snr Nurse Fernando</title></circle>
+<circle cx="340" cy="220" fill="#0D9488" r="4"><title>Nurse Silva</title></circle>
+<circle cx="560" cy="420" fill="#0D9488" r="4"><title>Nurse Bandara</title></circle>
+<circle cx="620" cy="450" fill="#0D9488" r="4"><title>Nurse Mendis</title></circle>
+</g>
+</svg>
+<!-- Twin Legend Pin Bottom Left -->
+<div class="absolute bottom-2 left-2 bg-[#0B132B]/90 backdrop-blur px-3 py-1.5 rounded-lg flex items-center gap-4 text-[#CBD5E1] text-[11px] font-mono">
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-[#DC2626]"></span> Resus Bay (Cat 1)</div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-[#D97706]"></span> Acute/Yellow (Cat 2)</div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-[#0D9488]"></span> Ambulatory (Cat 3-4)</div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-[#7C3AED]"></span> Observation (Short-Stay)</div>
+<div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-[#0D9488] ring-1 ring-white"></span> Available Bed</div>
+</div>
+</div>
+</div>
+<!-- Interactive Entity Context Drawer (4 Cols desktop) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Entity Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start justify-between mb-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-on-surface" id="ctx-bed-id">Bed R-03</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold" id="ctx-badge">Occupied</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant" id="ctx-zone">Resuscitation Bay • Station 03 (Oxygen Port #R03)</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]">single_bed</span>
+</div>
+<!-- Telemetry HUD Card -->
+<div class="bg-surface-container-low rounded-lg p-space-sm mb-space-md">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Real-Time Simulated Telemetry</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">BEDSIDE IOT SYNC</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center py-1">
+<div class="bg-surface-container-lowest p-1.5 rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Heart Rate</span>
+<span class="font-metric-display text-metric-display text-error font-bold leading-none" id="ctx-hr">108</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">bpm</span>
+</div>
+<div class="bg-surface-container-lowest p-1.5 rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">BP (Sim)</span>
+<span class="font-telemetry-data text-telemetry-data text-on-surface font-bold leading-tight block pt-1">135/88</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">mmHg</span>
+</div>
+<div class="bg-surface-container-lowest p-1.5 rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">SpO2</span>
+<span class="font-metric-display text-metric-display text-secondary font-bold leading-none" id="ctx-spo2">94%</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">High-Flow O2</span>
+</div>
+</div>
+</div>
+<!-- Clinical & Operational Details -->
+<div class="space-y-space-sm mb-space-md">
+<div class="flex justify-between items-center py-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Patient Case ID</span>
+<span class="font-code-sm text-code-sm font-semibold text-primary" id="ctx-case-id">#NHSL-ETU-8921</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Triage Category</span>
+<span class="font-label-md text-label-md font-semibold text-error" id="ctx-category">Category 1 Triage (Severe Resp. Distress)</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Time in Bed</span>
+<span class="font-telemetry-data text-telemetry-data text-on-surface" id="ctx-time">1h 45m (Expected ICU handover: 45m)</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lead Clinician</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium" id="ctx-clinician">Dr. M. Perera / Snr. Nurse F. Fernando</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded text-on-surface">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1 uppercase font-semibold">Twin Operational Inference</span>
+<p class="font-body-sm text-body-sm leading-snug" id="ctx-notes">
+              Pending Arterial Blood Gas (ABG) verification. Bed turnover estimated at 15:30. Ward 12 bed request pre-allocated by Agent Triage.
+            </p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-space-xs">
+<button class="w-full py-2 bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm rounded flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">clinical_notes</span> View Full Clinical Case Record
+          </button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-1.5 bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md rounded flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">cleaning_services</span> Pre-alert Clean
+            </button>
+<button class="py-1.5 bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md rounded flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">transfer_within_a_station</span> Transfer Sim
+            </button>
+</div>
+</div>
+</div>
+<!-- Live Agent Telemetry Explainability Pill Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">AGENT_BED_OPTIMIZER_01</span>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-semibold">98.4% CONF</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+          Scenario A recommendation: Decanting Ward 12 early liberates 4 downstream beds by 16:00, preventing ETU Resus overflow during the expected peak.
+        </p>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Congestion Risk Level</span>
+<span class="font-code-sm text-code-sm font-semibold text-secondary">MODERATE-MITIGATED (-13%)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Summary Footer Bar -->
+<div class="mt-space-md bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Zone Breakdown Stats -->
+<div class="flex flex-wrap items-center gap-space-lg w-full md:w-auto">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Zone Occupancy</span>
+<div class="flex items-center gap-3 mt-1">
+<div class="flex items-center gap-1 font-telemetry-data text-telemetry-data">
+<span class="w-2 h-2 rounded-full bg-[#DC2626]"></span> Red: <strong class="text-error">80%</strong>
+</div>
+<div class="flex items-center gap-1 font-telemetry-data text-telemetry-data">
+<span class="w-2 h-2 rounded-full bg-[#D97706]"></span> Yellow: <strong class="text-on-surface">90%</strong>
+</div>
+<div class="flex items-center gap-1 font-telemetry-data text-telemetry-data">
+<span class="w-2 h-2 rounded-full bg-[#0D9488]"></span> Green: <strong class="text-secondary">83%</strong>
+</div>
+<div class="flex items-center gap-1 font-telemetry-data text-telemetry-data">
+<span class="w-2 h-2 rounded-full bg-[#7C3AED]"></span> Obs: <strong class="text-error">100%</strong>
+</div>
+</div>
+</div>
+<div class="h-8 w-px bg-surface-container-high hidden md:block"></div>
+<!-- Simulation Delta Badge -->
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">trending_down</span>
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase">Simulation Delta</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Scenario A simulates <span class="font-semibold text-on-surface">+4 bed availability</span> by 16:00 (-13% overall ETU pressure).
+          </p>
+</div>
+</div>
+</div>
+<!-- Action Trigger -->
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<button class="px-3 py-2 bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md rounded transition-colors">
+        Export Twin State (JSON)
+      </button>
+<button class="px-4 py-2 bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm rounded flex items-center gap-1.5 shadow-sm transition-colors" onclick="openScenarioModal()">
+<span class="material-symbols-outlined text-[18px]">publish</span> Apply Scenario to Operational Plan
+      </button>
+</div>
+</div>
+<!-- Operational Confirmation Modal (Hidden by default) -->
+<div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-space-md" id="scenario-modal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-xl p-space-lg shadow-2xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Commit Digital Twin Scenario</span>
+</div>
+<button class="p-1 text-on-surface-variant hover:text-on-surface" onclick="closeScenarioModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg text-on-surface text-body-sm space-y-2">
+<p class="font-medium text-on-surface">You are committing <span class="text-primary font-bold">Scenario A (Expedited Ward 12 Decant)</span> to real-world ETU floor coordination.</p>
+<ul class="list-disc pl-5 text-on-surface-variant space-y-1">
+<li>Triggers automated SMS pre-alerts to Ward 12 nursing superintendent.</li>
+<li>Re-routes 2 incoming category 2 transfers to intermediate holding bay.</li>
+<li>Schedules rapid sanitization protocol for Beds R-05, R-10, and Y-03.</li>
+</ul>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-code-sm text-code-sm text-on-surface-variant">OPERATOR: DR. K. WICKRAMASINGHE</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded text-on-surface-variant hover:bg-surface-container font-label-md text-label-md" onclick="closeScenarioModal()">
+            Cancel
+          </button>
+<button class="px-4 py-2 rounded bg-primary text-on-primary font-headline-sm text-headline-sm shadow-sm" onclick="confirmScenario()">
+            Confirm & Broadcast
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript Logic -->
+<script>
+    // Bed Selection Context Handler
+    function selectBed(bedId, status, caseId, cat, vitals, doc, duration) {
+      document.getElementById('ctx-bed-id').textContent = 'Bed ' + bedId;
+      document.getElementById('ctx-case-id').textContent = caseId;
+      document.getElementById('ctx-category').textContent = cat;
+      document.getElementById('ctx-clinician').textContent = doc;
+      document.getElementById('ctx-time').textContent = duration;
+
+      const badge = document.getElementById('ctx-badge');
+      badge.textContent = status;
+
+      if (status === 'Available') {
+        badge.className = 'font-code-sm text-code-sm px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-semibold';
+        document.getElementById('ctx-hr').textContent = '--';
+        document.getElementById('ctx-spo2').textContent = '--';
+        document.getElementById('ctx-notes').textContent = 'Bed sanitized and ready for rapid clinical admission from Triage queue.';
+      } else {
+        badge.className = 'font-code-sm text-code-sm px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold';
+        document.getElementById('ctx-hr').textContent = vitals.includes('Pulse') ? vitals.split('Pulse')[1].trim().split(' ')[0] : '98';
+        document.getElementById('ctx-spo2').textContent = vitals.includes('O2') ? vitals.split('O2')[0].trim() : '96%';
+        document.getElementById('ctx-notes').textContent = 'Continuous IoT clinical telemetry online. Monitored under ETU protocol v3.4.';
+      }
+
+      // Context Drawer Zone label update
+      if (bedId.startsWith('R')) document.getElementById('ctx-zone').textContent = 'Resuscitation Bay (Zone 1) • Port #' + bedId;
+      else if (bedId.startsWith('Y')) document.getElementById('ctx-zone').textContent = 'Acute/Intermediate Pods (Zone 3) • Bed #' + bedId;
+      else if (bedId.startsWith('G')) document.getElementById('ctx-zone').textContent = 'Ambulatory Care Unit (Zone 4) • Recliner #' + bedId;
+      else if (bedId.startsWith('O')) document.getElementById('ctx-zone').textContent = 'Short-Stay Clinical Observation (Zone 5) • Bed #' + bedId;
+    }
+
+    // Modal Trigger
+    function openScenarioModal() {
+      document.getElementById('scenario-modal').classList.remove('hidden');
+    }
+    function closeScenarioModal() {
+      document.getElementById('scenario-modal').classList.add('hidden');
+    }
+    function confirmScenario() {
+      closeScenarioModal();
+      alert('Scenario A operational dispatch committed. SMS alerts triggered to Ward 12 floor superintendent.');
+    }
+
+    // Layer Toggles
+    const heatBtn = document.getElementById('layer-heat');
+    const heatLayer = document.getElementById('heatmap-layer');
+    let heatVisible = true;
+    heatBtn.addEventListener('click', () => {
+      heatVisible = !heatVisible;
+      heatLayer.style.display = heatVisible ? 'block' : 'none';
+      heatBtn.className = heatVisible
+        ? 'px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm'
+        : 'px-2.5 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1';
+    });
+
+    const staffBtn = document.getElementById('layer-staff');
+    const staffLayer = document.getElementById('staff-layer');
+    let staffVisible = true;
+    staffBtn.addEventListener('click', () => {
+      staffVisible = !staffVisible;
+      staffLayer.style.display = staffVisible ? 'block' : 'none';
+      staffBtn.className = staffVisible
+        ? 'px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm'
+        : 'px-2.5 py-1 rounded hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1';
+    });
+
+    // Ortho / Iso View Toggle
+    const svgEl = document.getElementById('etu-svg');
+    const btnIso = document.getElementById('btn-iso');
+    const btnOrtho = document.getElementById('btn-ortho');
+
+    btnIso.addEventListener('click', () => {
+      svgEl.style.transform = 'perspective(900px) rotateX(24deg) rotateZ(-3deg) scale(0.92)';
+      btnIso.className = 'px-2 py-1 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold shadow-sm flex items-center gap-1';
+      btnOrtho.className = 'px-2 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1';
+    });
+
+    btnOrtho.addEventListener('click', () => {
+      svgEl.style.transform = 'none';
+      btnOrtho.className = 'px-2 py-1 rounded bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold shadow-sm flex items-center gap-1';
+      btnIso.className = 'px-2 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1';
+    });
+
+    // Timeline Scrub Animation Sim
+    const simSlider = document.getElementById('simTimeline');
+    const timeDisplay = document.getElementById('current-sim-time');
+    const times = ['SIM LIVE 14:42', 'SIM 15:15 (+33m)', 'SIM 16:30 (SURGE)', 'SIM 17:15 (+2h33m)', 'SIM 18:00 (RESOLVED)'];
+
+    simSlider.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value);
+      const index = Math.min(Math.floor((val / 100) * times.length), times.length - 1);
+      timeDisplay.textContent = times[index];
+    });
+
+    let playing = false;
+    let timer = null;
+    const playBtn = document.getElementById('sim-play-btn');
+
+    playBtn.addEventListener('click', () => {
+      playing = !playing;
+      if (playing) {
+        playBtn.innerHTML = '<span class="material-symbols-outlined text-[15px]">pause</span> Pause';
+        timer = setInterval(() => {
+          let curr = parseInt(simSlider.value);
+          if (curr >= 100) {
+            curr = 0;
+          } else {
+            curr += 2;
+          }
+          simSlider.value = curr;
+          const index = Math.min(Math.floor((curr / 100) * times.length), times.length - 1);
+          timeDisplay.textContent = times[index];
+        }, 120);
+      } else {
+        playBtn.innerHTML = '<span class="material-symbols-outlined text-[15px]">play_arrow</span> Play Sim';
+        clearInterval(timer);
+      }
+    });
+  </script>
+</div></div></main></div></body></html>

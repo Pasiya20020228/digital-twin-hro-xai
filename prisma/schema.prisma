@@ -1,0 +1,195 @@
+// Prisma schema for Digital Twin-Based Intelligent Hospital Resource Optimization
+// NHSL Colombo ETU & Accident Ward Case Study
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String       @id @default(uuid())
+  email             String       @unique
+  name              String
+  staffId           String       @unique
+  passwordHash      String
+  role              String       @default("STAFF") // SYSTEM_ADMIN, HOSPITAL_ADMIN, DOCTOR, NURSE, STAFF
+  hospital          String       @default("National Hospital of Sri Lanka (NHSL), Colombo")
+  department        String       @default("Emergency Treatment Unit (ETU)")
+  designation       String       @default("Triage Medical Officer")
+  preferredWorkArea String       @default("ETU Complex")
+  status            String       @default("APPROVED") // APPROVED, PENDING, DISABLED
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+  auditLogs         AuditLog[]
+}
+
+model RolePermission {
+  id          String   @id @default(uuid())
+  role        String
+  permission  String
+  description String
+  createdAt   DateTime @default(now())
+}
+
+model PatientRecord {
+  id                  String             @id @default(uuid())
+  patientId           String             @unique // e.g. PT-2026-0042
+  fullName            String
+  age                 Int
+  gender              String             // Male, Female, Other
+  contactNumber       String?
+  presentingComplaint String
+  patientHistory      String?
+  arrivalDate         DateTime
+  arrivalTime         String             // e.g. 14:20
+  hospitalArea        String             @default("ETU Complex") // ETU Complex, Accident Ward
+  category            String             @default("Cat 2 - Trauma") // Cat 1 - Resus, Cat 2 - Trauma, Cat 3 - Urgent, Cat 4 - Semi-Urgent, Cat 5 - Non-Urgent
+  arrivalMode         String             @default("Ambulance 1990") // Ambulance 1990, Walk-in, Hospital Transfer, Police Vehicle
+  assignedBed         String?            // e.g. ETU-BAY-04, RESUS-01
+  assignedDoctor      String?
+  assignedNurse       String?
+  heartRate           Int?
+  bloodPressure       String?            // e.g. 120/80
+  spo2                Int?
+  gcs                 Int?
+  notes               String?
+  registeredBy        String             @default("Triage Officer")
+  status              String             @default("Under Treatment") // Under Treatment, Active Intake, Awaiting Transfer, Discharged, Deceased
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  discharges          PatientDischarge[]
+  flowEvents          PatientFlowEvent[]
+}
+
+model PatientDischarge {
+  id                       String        @id @default(uuid())
+  patientRecordId          String
+  patientRecord            PatientRecord @relation(fields: [patientRecordId], references: [id], onDelete: Cascade)
+  dischargeDate            DateTime
+  dischargeTime            String
+  disposition              String        // Home / Self Care, Transferred to Inpatient Ward, Transferred to Tertiary Center, Left Against Medical Advice
+  destinationWard          String?       // e.g. Ward 14 (Trauma Ortho), ICU 2
+  dischargeNotes           String
+  medicationReconciliation Boolean       @default(true)
+  recordedBy               String
+  bedTurnoverInitiated     Boolean       @default(true)
+  createdAt                DateTime      @default(now())
+}
+
+model PatientFlowEvent {
+  id              String         @id @default(uuid())
+  patientRecordId String?
+  patientRecord   PatientRecord? @relation(fields: [patientRecordId], references: [id], onDelete: SetNull)
+  patientId       String
+  patientName     String
+  eventType       String         // ARRIVAL, TRIAGE_UPDATE, BED_ASSIGNMENT, STEPDOWN, DISCHARGE
+  ward            String
+  fromStatus      String?
+  toStatus        String
+  durationMinutes Int?
+  metadata        String?        // JSON string
+  timestamp       DateTime       @default(now())
+}
+
+model DatasetImport {
+  id           String   @id @default(uuid())
+  filename     String
+  datasetType  String   // arrivals, patient_flow, bed_status, equipment, disaster_incidents, staff_shifts
+  recordCount  Int
+  validCount   Int
+  invalidCount Int
+  provenance   String   @default("SYNTHETIC") // REAL_APPROVED, PUBLIC, SYNTHETIC, HISTORICAL_CSV
+  status       String   @default("COMPLETED")
+  importedBy   String   @default("System Administrator")
+  errorLog     String?
+  createdAt    DateTime @default(now())
+}
+
+model Bed {
+  id               String   @id @default(uuid())
+  bedCode          String   @unique
+  bedType          String   // RESUSCITATION, ACUTE, GENERAL
+  ward             String   @default("ETU Complex")
+  status           String   @default("AVAILABLE") // OCCUPIED, AVAILABLE, CLEANING, OUT_OF_SERVICE
+  currentPatientId String?
+  updatedAt        DateTime @updatedAt
+}
+
+model Equipment {
+  id            String   @id @default(uuid())
+  equipmentCode String   @unique
+  equipmentType String   // Mechanical Ventilator, Monitor, Defibrillator, Infusion Pump, Suction
+  status        String   @default("AVAILABLE") // IN_USE, AVAILABLE, MAINTENANCE
+  location      String   @default("ETU Complex")
+  updatedAt     DateTime @updatedAt
+}
+
+model Forecast {
+  id            String   @id @default(uuid())
+  horizon       String   // 1h, 6h, 24h
+  targetValue   Float
+  lowerBound95  Float
+  upperBound95  Float
+  modelVersion  String   @default("v1.0.0")
+  inputSnapshot String?  // JSON stringified input features
+  createdAt     DateTime @default(now())
+}
+
+model OperationalAlert {
+  id         String   @id @default(uuid())
+  severity   String   // INFO, WARNING, CRITICAL
+  component  String   // Bed Capacity, Staffing, Equipment, Triage Queue
+  message    String
+  isResolved Boolean  @default(false)
+  resolvedBy String?
+  createdAt  DateTime @default(now())
+}
+
+model Recommendation {
+  id                 String   @id @default(uuid())
+  recommendationCode String
+  category           String
+  action             String
+  rationale          String
+  impactScore        Float
+  requiresApproval   Boolean  @default(true)
+  status             String   @default("PENDING") // PENDING, APPROVED, REJECTED, OVERRIDDEN
+  reviewedAt         DateTime?
+  reviewedBy         String?
+  overrideNotes      String?
+  createdAt          DateTime @default(now())
+}
+
+model SimulationRun {
+  id                 String   @id @default(uuid())
+  simulationId       String   @unique
+  scenario           String
+  horizonHours       Float
+  arrivalRatePerHour Float
+  bedCapacity        Int
+  doctorCount        Int
+  nurseCount         Int
+  summaryKpis        String   // JSON string
+  bottlenecks        String   // JSON string
+  executedBy         String   @default("System Researcher")
+  createdAt          DateTime @default(now())
+}
+
+model AuditLog {
+  id            String   @id @default(uuid())
+  action        String
+  entityType    String
+  entityId      String
+  performedBy   String
+  previousState String?
+  newState      String?
+  details       String?
+  ipAddress     String   @default("127.0.0.1")
+  timestamp     DateTime @default(now())
+  userId        String?
+  user          User?    @relation(fields: [userId], references: [id])
+}
